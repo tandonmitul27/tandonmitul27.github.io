@@ -28,7 +28,7 @@ author:
   bio              : "..."
   location         : "Mumbai, India"
   employer         : "IIT Bombay"
-  uri              : "https://www.iitb.ac.in/"
+ # uri              : "https://www.iitb.ac.in/"
   email            : "tandonmitul27@iitb.ac.in" 
 
   # Academic websites
@@ -51,7 +51,7 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+ # bluesky          : "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
