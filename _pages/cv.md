@@ -69,14 +69,14 @@ Service and leadership
 
 <!-- CV download/open link -->
 <p align="center">
-  <a href="/files/cv.pdf" target="_blank" rel="noopener">
+  <a href="/files/resume.pdf" target="_blank" rel="noopener">
     📄 Open my CV in your browser
   </a>
 </p>
 
 <!-- Embedded CV viewer -->
 <iframe 
-  src="/files/cv.pdf"
+  src="/files/resume.pdf"
   style="width:100%; height:90vh; border:none; background-color: var(--global-bg-color);"
   title="CV PDF Viewer">
 </iframe>
