@@ -67,8 +67,6 @@ Service and leadership
 
 -->
 
-## Curriculum Vitae
-
 Here's a preview of my CV:
 
 <div class="pdf-container">
