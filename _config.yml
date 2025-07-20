@@ -28,7 +28,7 @@ author:
   bio              : "..."
   location         : "Mumbai, India"
   employer         : "IIT Bombay"
- # uri              : "https://www.iitb.ac.in/"
+  uri              : "https://www.iitb.ac.in/"
   email            : "tandonmitul27@iitb.ac.in" 
 
   # Academic websites
