@@ -69,7 +69,7 @@ Service and leadership
 
 <!-- CV download/open link -->
 <p align="center">
-  <a href="/files/resume.pdf" target="_blank" rel="noopener">
+  <a class="no-underline" href="/files/resume.pdf" target="_blank" rel="noopener">
     📄 Open my CV in your browser
   </a>
 </p>
