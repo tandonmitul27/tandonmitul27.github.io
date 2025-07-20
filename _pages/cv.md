@@ -67,24 +67,16 @@ Service and leadership
 
 -->
 
-Here's a preview of my CV:
+<iframe
+  src="https://docs.google.com/viewer?embedded=true&url={{ '/files/resume.pdf' | absolute_url }}"
+  style="width:100%; height:800px; border:none;"
+  loading="lazy"
+  aria-label="CV preview via Google Docs Viewer">
+</iframe>
 
-<div class="pdf-container">
-  <object
-    data="{{ '/files/resume.pdf' | absolute_url }}#toolbar=0&navpanes=0"
-    type="application/pdf"
-    aria-label="CV PDF"
-  >
-    <iframe
-      src="https://docs.google.com/viewer?url={{ '/files/resume.pdf' | absolute_url }}&embedded=true"
-      aria-label="CV PDF fallback"
-    ></iframe>
-  </object>
-</div>
+<br>
 
-<a class="btn-cv" href="/files/your-cv.pdf"
-   target="_blank"
-   rel="noopener noreferrer">
-  View My CV (opens in new tab)
+<a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">
+  Open my CV in a new tab
 </a>
 
