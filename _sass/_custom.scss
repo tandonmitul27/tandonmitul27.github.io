@@ -1,6 +1,17 @@
-.cv-iframe {
+.a4-container {
   width: 100%;
-  height: 800px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* Calculate padding-top as (height ÷ width × 100) = 297 ÷ 210 ≈ 141.4% */
+  padding-top: 141.4%;
+}
+.a4-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   border: none;
 }
 
