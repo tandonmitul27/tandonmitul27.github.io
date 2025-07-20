@@ -1,13 +1,11 @@
-.pdf-container {
-  position: relative;
+.pdf-responsive {
   width: 100%;
-  padding-top: 56.25%;
+  aspect-ratio: 210 / 297; /* A4 paper → width:height ratio */
+  max-width: 800px;        /* optional constraint */
 }
-.pdf-container object,
-.pdf-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.pdf-responsive iframe,
+.pdf-responsive object {
   width: 100%;
   height: 100%;
   border: none;
