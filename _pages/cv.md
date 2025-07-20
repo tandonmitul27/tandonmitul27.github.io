@@ -74,9 +74,4 @@ Service and leadership
   </a>
 </p>
 
-<!-- Embedded CV viewer -->
-<iframe 
-  src="/files/resume.pdf"
-  style="width:100%; height:90vh; border:none; background-color: var(--global-bg-color);"
-  title="CV PDF Viewer">
-</iframe>
+<div id="pdf-viewer"></div>
