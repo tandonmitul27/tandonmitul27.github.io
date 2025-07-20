@@ -1,35 +1,6 @@
-.pdf-responsive {
-  width: 100%;
-  aspect-ratio: 210 / 297; /* A4 paper → width:height ratio */
-  max-width: 800px;        /* optional constraint */
-}
-
-.pdf-responsive iframe,
-.pdf-responsive object {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.btn-cv {
-  display: inline-block;
-  background: #0077cc;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-}
-.btn-cv:hover {
-  background: #005fa3;
-}
-
 .cv-iframe {
   width: 100%;
   height: 800px;
   border: none;
 }
 
-/* Optional: responsive height */
-@media (max-width: 800px) {
-  .cv-iframe { height: 600px; }
-}
