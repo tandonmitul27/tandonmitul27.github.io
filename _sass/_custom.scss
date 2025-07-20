@@ -1,34 +1,29 @@
-/* =========================================
-   1. Remove underline from the CV link
-   ========================================= */
-.cv-link,
-.cv-link:link,
-.cv-link:visited,
-.cv-link:hover,
-.cv-link:active {
+/* 1. Remove underline from the CV link in all states */
+a.cv-link,
+a.cv-link:link,
+a.cv-link:visited,
+a.cv-link:hover,
+a.cv-link:active {
   text-decoration: none !important;
-  border: none !important;
+  border-bottom: none !important;
   box-shadow: none !important;
   color: inherit !important;
 }
 
-/* =========================================
-   2. PDF iframe container styling (full page)
-   ========================================= */
-:root {
-  /* Light mode background */
-  --global-bg-color: #ffffff;
-}
-@media (prefers-color-scheme: dark) {
-  /* Dark mode background */
-  :root {
-    --global-bg-color: #1a1a1a;
-  }
-}
-
+/* 2. PDF iframe full-height style */
 .cv-iframe {
   width: 100%;
   height: 90vh;
   border: none;
   background-color: var(--global-bg-color);
+}
+
+/* Optional: define --global-bg-color variable if needed */
+:root {
+  --global-bg-color: white;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --global-bg-color: #1a1a1a;
+  }
 }
