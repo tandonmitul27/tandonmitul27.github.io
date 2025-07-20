@@ -68,7 +68,7 @@ Service and leadership
 -->
 
 <iframe
-  class="cv-iframe"
+  class="a4-container"
   src="https://docs.google.com/viewer?embedded=true&url={{ '/files/resume.pdf' | absolute_url }}"
   loading="lazy"
   aria-label="CV preview via Google Docs Viewer">
