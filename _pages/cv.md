@@ -74,10 +74,3 @@ Service and leadership
   aria-label="CV preview via Google Docs Viewer">
 </iframe>
 
-
-<br>
-
-<a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">
-  Open my CV in a new tab
-</a>
-
