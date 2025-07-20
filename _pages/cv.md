@@ -67,7 +67,22 @@ Service and leadership
 
 -->
 
-<object data="/files/resume.pdf" type="application/pdf" width="100%" height="800">
-  <p>Your browser doesn’t support embedded PDFs.  
-     <a href="/files/resume.pdf">Download the PDF</a> instead.</p>
-</object>
+## Curriculum Vitae
+
+Here's a preview of my CV:
+
+<div class="pdf-container">
+  <object
+    data="{{ '/files/resume.pdf' | absolute_url }}#toolbar=0&navpanes=0"
+    type="application/pdf"
+    aria-label="CV PDF"
+  >
+    <iframe
+      src="https://docs.google.com/viewer?url={{ '/files/resume.pdf' | absolute_url }}&embedded=true"
+      aria-label="CV PDF fallback"
+    ></iframe>
+  </object>
+</div>
+
+[Download the full CV (PDF)](/files/resume.pdf){: .btn}
+
