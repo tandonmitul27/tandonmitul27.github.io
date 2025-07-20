@@ -68,11 +68,12 @@ Service and leadership
 -->
 
 <iframe
-  src="https://docs.google.com/viewer?embedded=true&url={{ '/files/resume.pdf' | absolute_url }}"
-  style="width:100%; height:800px; border:none;"
+  class="cv-iframe"
+  src="https://docs.google.com/viewer?embedded=true&url={{ '/files/your-cv.pdf' | absolute_url }}"
   loading="lazy"
   aria-label="CV preview via Google Docs Viewer">
 </iframe>
+
 
 <br>
 
