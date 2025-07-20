@@ -82,5 +82,9 @@ Here's a preview of my CV:
   </object>
 </div>
 
-[Download the full CV (PDF)](/files/resume.pdf){: .btn}
+<a class="btn-cv" href="/files/your-cv.pdf"
+   target="_blank"
+   rel="noopener noreferrer">
+  View My CV (opens in new tab)
+</a>
 
