@@ -10,3 +10,15 @@
   height: 100%;
   border: none;
 }
+
+.btn-cv {
+  display: inline-block;
+  background: #0077cc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.btn-cv:hover {
+  background: #005fa3;
+}
