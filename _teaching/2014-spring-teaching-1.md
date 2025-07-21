@@ -1,10 +1,16 @@
 ---
-title: "Advanced Machine Learning"
+title: "Advanced Machine Learning (FALL '24)"
 collection: teaching
-type: "Graduate course"
-semester: "FALL '24"
-professor: "Dr. Smith"
-university: "Stanford University"
+type: "Graduate Course"
+venue: "Stanford University, Computer Science Department"
+date: 2024-09-01
 ---
 
-This course covers advanced topics in machine learning including deep learning architectures, reinforcement learning, and generative models. I led weekly discussion sections and graded assignments.
+**Professor:** Dr. Jane Smith  
+**My Role:** Teaching Assistant
+
+This course covers advanced topics in machine learning including deep learning architectures and reinforcement learning. My responsibilities included:
+
+- Leading weekly discussion sections
+- Grading assignments and exams
+- Holding office hours to help students
