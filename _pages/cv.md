@@ -68,7 +68,7 @@ Service and leadership
 -->
 
 <div id="pdf-viewer" style="width: 100%; height: 800px; border: 1px solid #eee; margin-bottom: 1em;"></div>
-[Download PDF](/files/your_resume.pdf){: .btn}
+[Download PDF](/files/resume.pdf){: .btn}
 
 <script src="/assets/js/pdfjs/pdf.js"></script>
 <script>
