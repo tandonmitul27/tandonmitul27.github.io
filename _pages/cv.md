@@ -75,7 +75,7 @@ Service and leadership
   pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
 
   // Load PDF with error handling
-  pdfjsLib.getDocument('/files/your_resume.pdf').promise
+  pdfjsLib.getDocument('/files/resume.pdf').promise
     .then(function(pdf) {
       console.log("PDF loaded, pages:", pdf.numPages);
       return pdf.getPage(1);
