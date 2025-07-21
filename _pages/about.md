@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Hey! I'm Mitul"
 author_profile: true
 redirect_from: 
   - /about/
@@ -50,5 +50,4 @@ More info about configuring Academic Pages can be found in [the guide](https://a
 
 -->
 
-Hey There!
 Under Development...
