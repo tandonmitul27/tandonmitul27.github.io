@@ -74,7 +74,7 @@ Service and leadership
   pdfjsLib.GlobalWorkerOptions.workerSrc = 
     'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 
-  pdfjsLib.getDocument('/files/your_resume.pdf').promise
+  pdfjsLib.getDocument('/files/resume.pdf').promise
     .then(pdf => pdf.getPage(1))
     .then(page => {
       const container = document.getElementById('pdf-viewer');
@@ -95,7 +95,7 @@ Service and leadership
     .catch(err => {
       console.error(err);
       document.getElementById('pdf-viewer').innerHTML = `
-        <p>Error loading PDF. <a href="/files/your_resume.pdf">Download instead</a></p>
+        <p>Error loading PDF. <a href="/files/resume.pdf">Download instead</a></p>
       `;
     });
 </script>
