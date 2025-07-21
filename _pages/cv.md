@@ -67,15 +67,25 @@ Service and leadership
 
 -->
 
-<div id="pdf-viewer" style="width: 100%; height: 800px; border: 1px solid #eee; margin-bottom: 1em;"></div>
-[Download PDF](/files/resume.pdf){: .btn}
-
 <script src="/assets/js/pdfjs/pdf.js"></script>
 <script>
-  // Load PDF
-  PDFJS.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
-  PDFJS.getDocument('/files/resume.pdf').then(function(pdf) {
-    pdf.getPage(1).then(function(page) {
+  console.log("PDF.js script loaded"); // Debugging line
+
+  // Set worker path
+  pdfjsLib = window['pdfjs-dist/build/pdf'];
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
+
+  // Debug: Check if PDF.js is initialized
+  console.log("PDF.js initialized:", pdfjsLib);
+
+  // Load the PDF
+  pdfjsLib.getDocument('/files/your_resume.pdf').promise
+    .then(function(pdf) {
+      console.log("PDF loaded successfully, # of pages:", pdf.numPages);
+      return pdf.getPage(1);
+    })
+    .then(function(page) {
+      console.log("Rendering page 1");
       var scale = 1.5;
       var viewport = page.getViewport({ scale: scale });
 
@@ -83,13 +93,14 @@ Service and leadership
       var context = canvas.getContext('2d');
       canvas.height = viewport.height;
       canvas.width = viewport.width;
-
       document.getElementById('pdf-viewer').appendChild(canvas);
 
       page.render({
         canvasContext: context,
         viewport: viewport
       });
+    })
+    .catch(function(error) {
+      console.error("PDF.js error:", error);
     });
-  });
 </script>
