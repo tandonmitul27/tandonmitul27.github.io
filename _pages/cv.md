@@ -67,4 +67,29 @@ Service and leadership
 
 -->
 
-<iframe src="/files/resume.pdf" width="100%" height="600px" style="border: none;"></iframe>
+<div id="pdf-viewer" style="width: 100%; height: 800px; border: 1px solid #eee; margin-bottom: 1em;"></div>
+[Download PDF](/files/your_resume.pdf){: .btn}
+
+<script src="/assets/js/pdfjs/pdf.js"></script>
+<script>
+  // Load PDF
+  PDFJS.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
+  PDFJS.getDocument('/files/your_resume.pdf').then(function(pdf) {
+    pdf.getPage(1).then(function(page) {
+      var scale = 1.5;
+      var viewport = page.getViewport({ scale: scale });
+
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      document.getElementById('pdf-viewer').appendChild(canvas);
+
+      page.render({
+        canvasContext: context,
+        viewport: viewport
+      });
+    });
+  });
+</script>
