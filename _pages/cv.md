@@ -74,7 +74,7 @@ Service and leadership
 <script>
   // Load PDF
   PDFJS.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
-  PDFJS.getDocument('/files/your_resume.pdf').then(function(pdf) {
+  PDFJS.getDocument('/files/resume.pdf').then(function(pdf) {
     pdf.getPage(1).then(function(page) {
       var scale = 1.5;
       var viewport = page.getViewport({ scale: scale });
