@@ -67,42 +67,35 @@ Service and leadership
 
 -->
 
-<script src="/assets/js/pdfjs/pdf.js"></script>
+<div id="pdf-viewer" style="width:100%; min-height:800px; background:#f5f5f5;"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 <script>
-  console.log("PDF.js script loaded");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 
-  // CORRECT initialization for prebuilt version
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
-
-  // Load PDF with error handling
-  pdfjsLib.getDocument('/files/resume.pdf').promise
-    .then(function(pdf) {
-      console.log("PDF loaded, pages:", pdf.numPages);
-      return pdf.getPage(1);
-    })
-    .then(function(page) {
-      console.log("Rendering page...");
+  pdfjsLib.getDocument('/files/your_resume.pdf').promise
+    .then(pdf => pdf.getPage(1))
+    .then(page => {
+      const container = document.getElementById('pdf-viewer');
+      const viewport = page.getViewport(1.0);
       
-      // Adjust scale to fit container
-      var container = document.getElementById('pdf-viewer');
-      var scale = container.offsetWidth / page.getViewport({ scale: 1.0 }).width;
-      var viewport = page.getViewport({ scale: scale });
-
-      var canvas = document.createElement('canvas');
-      var context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      container.innerHTML = ''; // Clear previous content
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = container.offsetWidth;
+      canvas.height = (container.offsetWidth / viewport.width) * viewport.height;
+      
       container.appendChild(canvas);
-
+      
       page.render({
         canvasContext: context,
-        viewport: viewport
+        viewport: page.getViewport(canvas.width / viewport.width)
       });
     })
-    .catch(function(error) {
-      console.error("Full error:", error);
-      document.getElementById('pdf-viewer').innerHTML = 
-        `<p style="color:red">Error loading PDF: ${error.message}</p>`;
+    .catch(err => {
+      console.error(err);
+      document.getElementById('pdf-viewer').innerHTML = `
+        <p>Error loading PDF. <a href="/files/your_resume.pdf">Download instead</a></p>
+      `;
     });
 </script>
