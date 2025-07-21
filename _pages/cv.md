@@ -67,14 +67,4 @@ Service and leadership
 
 -->
 
-<p align="center">
-  <a class="cv-link" href="/files/resume.pdf" target="_blank" rel="noopener">
-    📄 Open my CV in your browser
-  </a>
-</p>
-
-<iframe
-  src="/files/resume.pdf"
-  class="cv-iframe"
-  title="CV PDF Viewer">
-</iframe>
+<iframe src="/files/resume.pdf" width="100%" height="600px" style="border: none;"></iframe>
