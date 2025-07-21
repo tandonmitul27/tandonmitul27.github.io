@@ -69,31 +69,31 @@ Service and leadership
 
 <script src="/assets/js/pdfjs/pdf.js"></script>
 <script>
-  console.log("PDF.js script loaded"); // Debugging line
+  console.log("PDF.js script loaded");
 
-  // Set worker path
-  pdfjsLib = window['pdfjs-dist/build/pdf'];
+  // CORRECT initialization for prebuilt version
   pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/js/pdfjs/pdf.worker.js';
 
-  // Debug: Check if PDF.js is initialized
-  console.log("PDF.js initialized:", pdfjsLib);
-
-  // Load the PDF
+  // Load PDF with error handling
   pdfjsLib.getDocument('/files/your_resume.pdf').promise
     .then(function(pdf) {
-      console.log("PDF loaded successfully, # of pages:", pdf.numPages);
+      console.log("PDF loaded, pages:", pdf.numPages);
       return pdf.getPage(1);
     })
     .then(function(page) {
-      console.log("Rendering page 1");
-      var scale = 1.5;
+      console.log("Rendering page...");
+      
+      // Adjust scale to fit container
+      var container = document.getElementById('pdf-viewer');
+      var scale = container.offsetWidth / page.getViewport({ scale: 1.0 }).width;
       var viewport = page.getViewport({ scale: scale });
 
       var canvas = document.createElement('canvas');
       var context = canvas.getContext('2d');
       canvas.height = viewport.height;
       canvas.width = viewport.width;
-      document.getElementById('pdf-viewer').appendChild(canvas);
+      container.innerHTML = ''; // Clear previous content
+      container.appendChild(canvas);
 
       page.render({
         canvasContext: context,
@@ -101,6 +101,8 @@ Service and leadership
       });
     })
     .catch(function(error) {
-      console.error("PDF.js error:", error);
+      console.error("Full error:", error);
+      document.getElementById('pdf-viewer').innerHTML = 
+        `<p style="color:red">Error loading PDF: ${error.message}</p>`;
     });
 </script>
