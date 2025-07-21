@@ -1,18 +1,10 @@
 ---
-title: "EE 224: Digital Systems"
+title: "Advanced Machine Learning"
 collection: teaching
-venue: "Prof. Virendra Singh, IIT Bombay"
-date: 2024-01-01
-location: "City, Country"
+type: "Graduate course"
+semester: "FALL '24"
+professor: "Dr. Smith"
+university: "Stanford University"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+This course covers advanced topics in machine learning including deep learning architectures, reinforcement learning, and generative models. I led weekly discussion sections and graded assignments.
