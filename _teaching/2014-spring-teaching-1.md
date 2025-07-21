@@ -2,7 +2,7 @@
 title: "EE 224: Digital Systems"
 collection: teaching
 venue: "Prof. Virendra Singh, IIT Bombay"
-date: 2024
+date: 2024-01-01
 location: "City, Country"
 ---
 
