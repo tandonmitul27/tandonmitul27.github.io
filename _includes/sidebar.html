@@ -26,39 +26,11 @@
       {% endif %}
     {% endif %}
     
-    <!-- Clustrmaps Widget -->
-    <div class="clustrmaps-widget" style="margin: 1.5em 0;">
-      <h3 style="margin-bottom: 0.5em; font-size: 1.1em;">Visitor Locations</h3>
-      <div style="width: 100%; height: 200px; position: relative; overflow: hidden; background: #f8f8f8; border-radius: 4px;">
-        <div style="transform: scale(0.85); transform-origin: top left; width: 118%; height: 118%;">
-          <script type="text/javascript" id="clstr_globe" 
-            src="//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8&v=2"></script>
-        </div>
-      </div>
-      <p style="font-size: 0.8em; margin-top: 0.5em; color: #666;">
-        <a href="https://clustrmaps.com/site/1bvr9" target="_blank" rel="noopener">View map stats</a>
-      </p>
-    </div>
-
+        <!-- Clustermap Widget -->
+    <div style="width: 100%; height: 200px; position: relative; overflow: hidden;">
+    <script type="text/javascript" id="clstr_globe" 
+      src="//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8"></script>
   </div>
-
-  <script>
-  // Fallback resizing for the globe
-  document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.clustrmaps-widget');
-    const canvas = container ? container.querySelector('canvas') : null;
-    
-    if (canvas) {
-      // Set initial size
-      canvas.style.width = '100%';
-      canvas.style.height = '100%';
-      
-      // Handle window resize
-      window.addEventListener('resize', function() {
-        const scale = Math.min(1, container.offsetWidth / 300);
-        container.querySelector('div').style.transform = `scale(${scale * 0.85})`;
-      });
-    }
-  });
-  </script>
+</div>
+ 
 {% endif %}
