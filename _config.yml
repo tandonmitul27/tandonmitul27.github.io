@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Mitul's Homepage"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Mitul Tandon"
 description              : &description "personal description"
