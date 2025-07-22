@@ -11,8 +11,8 @@ date: "2024-08-01"
   .page__meta-date { display: none; }  /* Hides date visually */
 </style>
 
-**Professor:** Virendra Singh  
-**My Role:** UG Teaching Assistant (95+ students)
+Prof. Virendra Singh  
+UG Teaching Assistant | **95+ students**
 
 - Served as the **sole undergraduate TA** managing all course logistics
 - Conducted weekly test invigilation and graded assessments
