@@ -1,8 +1,7 @@
 ---
 title: "EE224: Digital Systems (Fall ’24)"
 collection: teaching
-type: "_Prof. Virendra Singh_"
-venue: "Electrical Engineering Department, IIT Bombay"
+venue: "Prof. Virendra Singh, Electrical Engineering Department, IIT Bombay"
 share: false
 date: "2024-08-01"
 ---
