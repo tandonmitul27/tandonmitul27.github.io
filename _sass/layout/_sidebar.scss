@@ -13,12 +13,6 @@
   @include clearfix();
   margin-bottom: 1em;
 
-  @include breakpoint($large) {
-    @include span(2 of 12);
-    padding-right: 30px; /* ← Adds space ONLY to the right */
-    box-sizing: border-box; /* ← Ensures padding stays inside width */
-  }
-
   @media (orientation: portrait) {
     margin-top: 1em;
   }
