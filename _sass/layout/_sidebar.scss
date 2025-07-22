@@ -81,14 +81,12 @@
    ========================================================================== */
 
 .author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
+  display: block; /* Changed from table-cell */
+  width: auto;
+  margin: 0 auto; /* Center the avatar container */
+  text-align: center; /* Center child elements */
 
   @include breakpoint($large) {
-    display: block;
     width: auto;
     height: auto;
   }
@@ -96,6 +94,8 @@
   img {
     max-width: 175px;
     border-radius: 50%;
+    margin: 0 auto; /* Center the image */
+    display: block; /* Needed for margin auto to work */
 
     @include breakpoint($large) {
       padding: 5px;
@@ -105,17 +105,15 @@
 }
 
 .author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
-  line-height: 1;
+  display: block; /* Changed from table-cell */
+  width: 100%;
+  text-align: center; /* Center all content */
+  padding: 0; /* Remove side paddings */
+  margin-top: 10px;
 
   @include breakpoint($large) {
     display: block;
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -127,9 +125,12 @@
     margin-bottom: 10px;
   }
 }
+
 .sidebar .author__name {
   font-family: $sans-serif;
   font-size: $type-size-5;
+  text-align: center; /* Center the name */
+  margin: 10px 0; /* Add some vertical spacing */
 }
 
 .sidebar .author__desktop {
