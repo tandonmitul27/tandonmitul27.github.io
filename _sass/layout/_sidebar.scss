@@ -14,7 +14,9 @@
   margin-bottom: 1em;
 
   @include breakpoint($large) {
-    padding-right: 30px; /* Adds space between sidebar and content */
+    @include span(2 of 12);
+    padding-right: 30px; /* ← Adds space ONLY to the right */
+    box-sizing: border-box; /* ← Ensures padding stays inside width */
   }
 
   @media (orientation: portrait) {
