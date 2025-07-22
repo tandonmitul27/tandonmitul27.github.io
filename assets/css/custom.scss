@@ -1,0 +1,15 @@
+.visitor-counter {
+  display: flex;
+  justify-content: center;  /* horizontally centers */
+  padding: 1rem 0;           /* space above/below counter */
+}
+
+.sidebar .visitor-counter {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .visitor-counter {
+    display: none;  /* hide on mobile if it feels cramped */
+  }
+}
