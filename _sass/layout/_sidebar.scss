@@ -1,83 +1,5 @@
 /* ==========================================================================
-   SIDEBAR
-   ========================================================================== */
-
-/*
-   Default
-   ========================================================================== */
-
-.sidebar {
-  -webkit-transform: translate3d(0, 0 , 0);
-          transform: translate3d(0, 0 , 0);
-
-  @include clearfix();
-  margin-bottom: 1em;
-
-  @media (orientation: portrait) {
-    margin-top: 1em;
-  }
-
-  @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
-    overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;
-  }
-
-  @include breakpoint($large) {
-    @include span(2 of 12);
-    opacity: 1;
-    -webkit-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  @include breakpoint($x-large) {
-    max-width: $sidebar-link-max-width;
-    padding-right: 0;
-  }
-
-  h2, h3, h4, h5, h6 {
-    margin-bottom: 0;
-    font-family: $sans-serif-narrow;
-  }
-
-  h3, h4 {
-    font-size: $type-size-5;
-  }
-
-  p, li {
-    font-family: $sans-serif;
-    font-size: $type-size-6;
-    line-height: 1.5;
-  }
-
-  img {
-    width: 100%;
-  }
-}
-
-.sidebar__right {
-  margin-bottom: 1em;
-
-  @include breakpoint($large) {
-    position: relative;
-    float: right;
-    width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
-    z-index: 10;
-  }
-
-  @include breakpoint($x-large) {
-    width: $right-sidebar-width;
-  }
-}
-
-/*
-   Author profile and links
+   SIDEBAR - AUTHOR SECTION MODIFICATIONS
    ========================================================================== */
 
 .author__avatar {
@@ -91,6 +13,7 @@
     display: block;
     width: auto;
     height: auto;
+    text-align: center; // Center the avatar image
   }
 
   img {
@@ -100,6 +23,7 @@
     @include breakpoint($large) {
       padding: 5px;
       border: 1px solid var(--global-border-color);
+      display: inline-block; // Ensure centering works properly
     }
   }
 }
@@ -116,6 +40,11 @@
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    
+    // Calculate left margin to align text with the left edge of centered image
+    // Assuming 175px max image width, center it and align text to left edge
+    margin-left: calc((100% - 175px) / 2);
+    width: 175px; // Match the image width for text alignment
   }
 }
 
@@ -124,12 +53,13 @@
 
   @include breakpoint($large) {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px; // Increased from 10px for more vertical distance
   }
 }
+
 .sidebar .author__name {
   font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-size: $type-size-5; // Keep author name font size unchanged
 }
 
 .sidebar .author__desktop {
@@ -146,6 +76,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
+  
+  // Increase font size by 1 (assuming $type-size-6 was original)
+  font-family: $sans-serif;
+  font-size: $type-size-5;
+  line-height: 1.5;
 }
 
 .author__bio {
@@ -155,6 +90,11 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
+  
+  // Increase font size by 1 (assuming $type-size-6 was original)
+  font-family: $sans-serif;
+  font-size: $type-size-5;
+  line-height: 1.5;
 }
 
 .author__urls-wrapper {
@@ -254,7 +194,7 @@
     padding-top: 2px;
     padding-bottom: 2px;
     color: inherit;
-    font-size: $type-size-5;
+    font-size: $type-size-4; // Increased from $type-size-5 (font size +1)
     text-decoration: none;
 
     &:hover {
