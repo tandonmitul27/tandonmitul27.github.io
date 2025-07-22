@@ -7,7 +7,7 @@ share: false
 date: 2024-08-01
 ---
 
-**UG Teaching Assistant** **|** **95+ students**  
+**UG Teaching Assistant** **(95+ students)**  
 
 - Served as the **sole undergraduate TA** managing all course logistics
 - Conducted weekly test invigilation and graded assessments
