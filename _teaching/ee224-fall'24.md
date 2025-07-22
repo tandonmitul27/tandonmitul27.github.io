@@ -4,12 +4,8 @@ collection: teaching
 type: "UG Core Course"
 venue: "Electrical Engineering Department, IIT Bombay"
 share: false
-date: "2024-08-01"
+date: "2099-08-01"
 ---
-
-<style>
-  .page__meta-date { display: none; }  /* Hides date visually */
-</style>
 
 Prof. Virendra Singh  
 UG Teaching Assistant | **95+ students**
