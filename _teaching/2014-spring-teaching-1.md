@@ -7,5 +7,9 @@ date: 2024-08-01
 ---
 
 **Professor:** Virendra Singh  
-**My Role:** UG Teaching Assistant
+**My Role:** UG Teaching Assistant (95+ students)
 
+- Served as **sole undergraduate TA** managing all course logistics
+- Conducted weekly test invigilation and graded assessments
+- Developed quiz solutions and evaluation rubrics
+- Held regular doubt-solving sessions for student mentorship
