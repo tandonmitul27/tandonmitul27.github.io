@@ -13,6 +13,10 @@
   @include clearfix();
   margin-bottom: 1em;
 
+  @include breakpoint($large) {
+    padding-right: 30px; /* Adds space between sidebar and content */
+  }
+
   @media (orientation: portrait) {
     margin-top: 1em;
   }
