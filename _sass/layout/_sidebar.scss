@@ -19,7 +19,7 @@
 
   @media screen and (min-width: $sidebar-screen-min-width) {
     height: 100vh;
-    overflow-y: auto;               // Add scrollbar if the sidebar is too long
+    overflow-y: auto;
     position: fixed;
     padding-top: $masthead-height;
   }
@@ -96,21 +96,35 @@
   }
 }
 
-/* Center only the name */
 .sidebar .author__name {
   font-family: $sans-serif;
-  font-size: $type-size-4; /* Slightly larger */
+  font-size: $type-size-4;
   text-align: center;
-  margin: 10px 0 5px; /* Tightened spacing */
+  margin: 10px 0 5px;
   line-height: 1.2;
 }
 
-/* Profile content container */
 .author__content {
   width: 100%;
   padding: 0;
   margin: 0 auto;
-  max-width: 85%; /* Constrain width for better alignment */
+  
+  @include breakpoint($large) {
+    padding-left: 25px;
+    text-align: left;
+  }
+
+  p {
+    font-size: $type-size-5;
+    margin: 0 0 3px 0;
+    line-height: 1.3;
+  }
+}
+
+.author__pronouns {
+  font-size: $type-size-5;
+  margin: 0 0 3px 0;
+  line-height: 1.3;
   
   @include breakpoint($large) {
     padding-left: 25px;
@@ -118,39 +132,27 @@
   }
 }
 
-/* Institution/Location styling */
-.author__content p {
-  font-size: $type-size-5; /* Increased from default */
-  margin: 0 0 4px 0; /* Tight vertical spacing */
-  line-height: 1.3;
-}
-
-/* Bio styling */
 .author__bio {
   font-size: $type-size-5;
-  margin: 0 0 8px 0; /* Balanced spacing */
-  line-height: 1.4;
-}
-
-/* URLs wrapper */
-.author__urls-wrapper {
-  position: relative;
-  margin-top: 8px; /* Reduced from 15px */
+  margin: 0 0 5px 0;
+  line-height: 1.3;
   
   @include breakpoint($large) {
-    padding-left: 25px; /* Matches content above */
+    padding-left: 25px;
+    text-align: left;
   }
 }
 
-/* URLs list */
-.author__urls {
-  li {
-    padding: 2px 0; /* Tighter list items */
-  }
+.author__urls-wrapper {
+  position: relative;
+  margin-top: 5px;
   
-  a {
-    font-size: $type-size-5; /* Consistent size */
-    padding: 3px 10px 3px 0; /* Better alignment */
+  button {
+    display: none !important;
+  }
+
+  @include breakpoint($large) {
+    padding-left: 25px;
   }
 }
 
@@ -159,9 +161,9 @@
   position: absolute;
   right: 0;
   left: 0;
-  margin: 15px auto 0;
+  margin: 10px auto 0;
   width: 90%;
-  padding: 15px;
+  padding: 10px;
   list-style-type: none;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
@@ -176,7 +178,7 @@
     position: relative;
     width: auto;
     margin: 0;
-    padding: 0 0 0 25px; /* Right shift */
+    padding: 0 0 0 25px;
     border: 0;
     background: transparent;
     box-shadow: none;
@@ -201,12 +203,12 @@
 
   li {
     white-space: nowrap;
-    padding: 3px 0;
+    padding: 2px 0;
   }
 
   a {
     display: block;
-    padding: 5px 10px 5px 0; /* Right shift */
+    padding: 3px 10px 3px 0;
     color: inherit;
     font-size: $type-size-5;
     text-decoration: none;
