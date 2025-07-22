@@ -52,7 +52,7 @@
   p, li {
     font-family: $sans-serif;
     font-size: $type-size-6;
-    line-height: 1.5;
+    line-height: 1.8;
   }
 
   img {
@@ -102,7 +102,7 @@
   font-size: $type-size-4;
   text-align: center;
   margin: 10px 0 2px;  /* Tight bottom margin */
-  line-height: 1.5;
+  line-height: 1.8;
   width: 100%;
 }
 
@@ -115,7 +115,7 @@
   p {
     font-size: $type-size-5;
     margin: 0 0 2px 0;  /* Uniform 2px spacing */
-    line-height: 1.5;
+    line-height: 1.8;
     text-align: center; /* Center on mobile */
     
     @include breakpoint($large) {
@@ -129,7 +129,7 @@
 .author__pronouns {
   font-size: $type-size-5;
   margin: 0 0 2px 0;
-  line-height: 1.5;
+  line-height: 1.8;
   text-align: center;
   
   @include breakpoint($large) {
@@ -142,7 +142,7 @@
 .author__bio {
   font-size: $type-size-5;
   margin: 0 0 5px 0;  /* Slightly more space below bio */
-  line-height: 1.5;
+  line-height: 1.8;
   text-align: center;
   
   @include breakpoint($large) {
