@@ -114,6 +114,8 @@
   @include breakpoint($large) {
     display: block;
     width: 100%;
+    padding-left: 25px; /* Added to align institution/location */
+    text-align: left; /* Changed to left */
   }
 }
 
