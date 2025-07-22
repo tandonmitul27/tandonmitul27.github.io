@@ -4,6 +4,7 @@ collection: teaching
 type: "UG Core Course"
 venue: "Electrical Engineering Department, IIT Bombay"
 share: false
+date: ""
 ---
 
 **Professor:** Virendra Singh  
