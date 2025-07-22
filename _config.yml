@@ -25,7 +25,7 @@ author:
   avatar           : "me1.jpeg"
   name             : "Mitul Tandon"
   pronouns         : # example: "she/her"  
-  bio              : "..."
+ # bio              : "..."
   location         : "Mumbai, India"
   employer         : "IIT Bombay"
  # uri              : "https://www.iitb.ac.in/"
