@@ -3,7 +3,6 @@ title: "EE224: Digital Systems (Fall '24)"
 collection: teaching
 type: "UG Core Course"
 venue: "Electrical Engineering Department, IIT Bombay"
-date: 2024-08-01
 share: false
 ---
 
