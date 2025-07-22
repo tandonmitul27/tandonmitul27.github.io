@@ -80,7 +80,6 @@
    Author profile and links
    ========================================================================== */
 
-
 .author__avatar {
   display: block;
   width: auto;
@@ -125,10 +124,12 @@
   margin: 10px 0;
 }
 
+/* Right-shifted elements */
 .sidebar .author__desktop {
   display: none;
   @media screen and (min-width: 1024px) {
     display: block;
+    padding-left: 25px; /* Right shift */
   }
 }
 
@@ -139,6 +140,8 @@
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: left;
+    padding-left: 25px; /* Right shift */
   }
 }
 
@@ -149,6 +152,8 @@
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: left;
+    padding-left: 25px; /* Right shift */
   }
 }
 
@@ -163,7 +168,7 @@
 
   @include breakpoint($large) {
     text-align: left;
-    padding-left: 25px; /* Added left spacing */
+    padding-left: 25px; /* Right shift */
   }
 
   button {
@@ -197,11 +202,10 @@
     position: relative;
     width: auto;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 25px; /* Right shift */
     border: 0;
     background: transparent;
     box-shadow: none;
-    text-align: left;
   }
 
   &:before {
@@ -228,7 +232,7 @@
 
   a {
     display: block;
-    padding: 5px 10px;
+    padding: 5px 10px 5px 0; /* Right shift */
     color: inherit;
     font-size: $type-size-5;
     text-decoration: none;
