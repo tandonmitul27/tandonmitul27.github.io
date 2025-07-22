@@ -3,11 +3,6 @@
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   
-  <!-- ClustrMaps Globe Section (Simple Version) -->
-  <div style="text-align: center; margin: 20px 0;">
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8"></script>
-  </div>
-  
   {% if page.sidebar %}
     {% for s in page.sidebar %}
       {% if s.image %}
@@ -27,4 +22,7 @@
     {% endif %}
   {% endif %}
   </div>
+
+<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8"></script>
+
 {% endif %}
