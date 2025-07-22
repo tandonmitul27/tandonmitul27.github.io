@@ -2,18 +2,18 @@
    SIDEBAR - AUTHOR SECTION MODIFICATIONS
    ========================================================================== */
 
+/* 1. Center the author avatar image */
 .author__avatar {
   display: table-cell;
   vertical-align: top;
   width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
 
   @include breakpoint($large) {
     display: block;
     width: auto;
     height: auto;
-    text-align: center; // Center the avatar image
+    text-align: center; // Center the image container
+    margin-bottom: 15px; // Add some space below the image
   }
 
   img {
@@ -23,11 +23,13 @@
     @include breakpoint($large) {
       padding: 5px;
       border: 1px solid var(--global-border-color);
-      display: inline-block; // Ensure centering works properly
+      display: block; // Make it a block element
+      margin: 0 auto; // Center the image itself
     }
   }
 }
 
+/* 2. Align text content to start where image starts (left edge of centered image) */
 .author__content {
   display: table-cell;
   vertical-align: top;
@@ -40,46 +42,38 @@
     width: 100%;
     padding-left: 0;
     padding-right: 0;
-    
-    // Calculate left margin to align text with the left edge of centered image
-    // Assuming 175px max image width, center it and align text to left edge
-    margin-left: calc((100% - 175px) / 2);
-    width: 175px; // Match the image width for text alignment
+    text-align: center; // Center all text content initially
   }
 }
 
+/* Keep author name centered and increase spacing after it */
 .author__name {
   margin: 0;
 
   @include breakpoint($large) {
     margin-top: 10px;
-    margin-bottom: 15px; // Increased from 10px for more vertical distance
+    margin-bottom: 20px; // Increased vertical spacing
+    text-align: center;
   }
 }
 
 .sidebar .author__name {
   font-family: $sans-serif;
-  font-size: $type-size-5; // Keep author name font size unchanged
+  font-size: $type-size-5; // Keep original size as requested
 }
 
-.sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
-}
-
+/* Style other text elements - increase font size and align */
 .author__pronouns {
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
+    text-align: center;
   }
   
-  // Increase font size by 1 (assuming $type-size-6 was original)
   font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-size: $type-size-5; // Increased by 1 level
   line-height: 1.5;
 }
 
@@ -89,12 +83,36 @@
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
-  // Increase font size by 1 (assuming $type-size-6 was original)
   font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-size: $type-size-5; // Increased by 1 level
   line-height: 1.5;
+}
+
+/* Alternative approach if you want left-aligned text starting at image edge */
+/*
+@include breakpoint($large) {
+  .author__content {
+    // Calculate offset to align with left edge of centered 175px image
+    padding-left: calc((100% - 175px) / 2);
+    text-align: left;
+  }
+  
+  .author__name,
+  .author__pronouns,
+  .author__bio {
+    text-align: left;
+  }
+}
+*/
+
+.sidebar .author__desktop {
+  display: none;
+  @media screen and (min-width: 1024px) {
+    display: block;
+  }
 }
 
 .author__urls-wrapper {
@@ -103,7 +121,6 @@
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 10;
-  position: relative;
   cursor: pointer;
 
   li:last-child {
@@ -114,6 +131,7 @@
 
   @include breakpoint($large) {
     display: block;
+    text-align: center; // Center the social links
   }
 
   button {
@@ -147,6 +165,7 @@
     border: 0;
     background: transparent;
     box-shadow: none;
+    text-align: center; // Center the links list
   }
 
   &:before {
@@ -185,6 +204,11 @@
 
   li {
     white-space: nowrap;
+    
+    @include breakpoint($large) {
+      display: inline-block; // Make links display horizontally if needed
+      margin: 0 5px; // Add some spacing between links
+    }
   }
 
   a {
@@ -194,11 +218,37 @@
     padding-top: 2px;
     padding-bottom: 2px;
     color: inherit;
-    font-size: $type-size-4; // Increased from $type-size-5 (font size +1)
+    font-size: $type-size-4; // Increased font size by 1 level
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+/* Additional override to ensure changes take precedence */
+.sidebar {
+  .author__avatar {
+    @include breakpoint($large) {
+      text-align: center !important;
+      
+      img {
+        margin: 0 auto !important;
+        display: block !important;
+      }
+    }
+  }
+  
+  .author__content {
+    @include breakpoint($large) {
+      text-align: center !important;
+    }
+  }
+  
+  .author__name {
+    @include breakpoint($large) {
+      margin-bottom: 20px !important;
     }
   }
 }
