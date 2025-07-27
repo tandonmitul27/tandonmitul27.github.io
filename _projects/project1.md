@@ -1,9 +1,8 @@
 ---
 title: "GPU Accelerated DNA Aligner"
-collection: projects
+collection: teaching
 prof: "Prof. Virendra Singh"
-lab: "CADSL, IIT Bombay"
-description: "We built a GPGPU-based DNA aligner using warp-level vectorization and custom dot-product accelerators."
-image: "/assets/img/projects/project01.jpg"
-url: "/project/project01/"
+venue: "CADSL, IIT Bombay"
+share: false
+date: 2024-08-01
 ---
