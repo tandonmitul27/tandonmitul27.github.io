@@ -1,6 +1,6 @@
 ---
 title: "GPU Accelerated DNA Aligner"
-collection: teaching
+collection: projects
 prof: "Prof. Virendra Singh"
 venue: "CADSL, IIT Bombay"
 share: false
