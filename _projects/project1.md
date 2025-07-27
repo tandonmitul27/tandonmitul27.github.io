@@ -1,4 +1,3 @@
-
 ---
 title: "GPU Accelerated DNA Aligner"
 collection: projects
