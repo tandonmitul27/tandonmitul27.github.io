@@ -11815,7 +11815,19 @@ section.resume-section .resume-section-content {
 }
 
 
-/* --- Project Expansion Styles (Updated) --- */
+/* --- Project Expansion Styles (Final Smoother Version) --- */
+
+/* Style for the back-to-projects link button */
+#back-to-projects {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    text-decoration: none;
+}
+#back-to-projects:hover {
+    color: #212529;
+    text-decoration: none;
+}
 
 /* Makes the project title look clickable */
 .project-title a {
@@ -11825,43 +11837,26 @@ section.resume-section .resume-section-content {
     text-decoration: underline;
 }
 
-/* Style for the back-to-projects link button (FINAL version) */
-#back-to-projects {
-    font-size: 1.1rem;        /* Makes the font slightly larger */
-    font-weight: 600;           /* A bit bolder than normal */
-    color: #495057;           /* Sets the color to the dark gray from your theme */
-    text-decoration: none;    /* Removes the underline */
+/* Set up the new, smoother transition for both the project item and its details */
+.project-item, .project-details {
+    /* This custom cubic-bezier curve creates a very smooth ease-in and ease-out effect */
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    overflow: hidden;
 }
 
-/* This ensures the button doesn't change color or get an underline when you hover over it */
-#back-to-projects:hover {
-    color: #212529;           /* A slightly darker black for hover effect */
-    text-decoration: none;
-}
-
-/* Hide the detailed description by default and set up transitions */
+/* Default collapsed state for the details */
 .project-details {
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    /* CHANGED: Duration increased to 0.8s and easing is now 'ease-out' */
-    transition: all 0.8s ease-out; 
-}
-
-/* Base style for each project item to enable its own collapse transition */
-.project-item {
-    /* CHANGED: Duration increased to 0.8s and easing is now 'ease-out' */
-    transition: all 0.8s ease-out;
-    overflow: hidden;
 }
 
 /* ---- Styles for when a project is expanded ---- */
 
-/* When the main container is in "viewing" mode, hide the non-expanded projects */
+/* Hides the non-expanded projects */
 #projects .resume-section-content.viewing-project .project-item:not(.expanded) {
     max-height: 0;
     opacity: 0;
@@ -11870,7 +11865,7 @@ section.resume-section .resume-section-content {
     border: 0;
 }
 
-/* When a project is marked as 'expanded', this makes its details visible */
+/* Makes the expanded project's details visible */
 #projects .resume-section-content.viewing-project .project-item.expanded .project-details {
     max-height: 2000px;
     opacity: 1;
