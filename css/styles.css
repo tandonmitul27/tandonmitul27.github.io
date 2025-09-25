@@ -11815,53 +11815,87 @@ section.resume-section .resume-section-content {
 }
 
 
-/* --- Project Expansion Styles (Updated) --- */
+/* --- Project Expansion Styles (Enhanced Version) --- */
 
-/* Makes the project title look clickable */
+/* Lays out the project title and the new chevron icon */
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .project-title a {
     cursor: pointer;
 }
+
 .project-title a:hover {
     text-decoration: underline;
 }
 
-/* Style for the back-to-projects link button (FINAL version) */
-#back-to-projects {
-    font-size: 1.1rem;        /* Makes the font slightly larger */
-    font-weight: 600;           /* A bit bolder than normal */
-    color: #495057;           /* Sets the color to the dark gray from your theme */
-    text-decoration: none;    /* Removes the underline */
+/* Styles and transitions for the new chevron icon */
+.project-chevron {
+    font-size: 1.2rem;
+    color: #adb5bd; /* A subtle gray color */
+    transition: transform 0.4s ease-out;
 }
 
-/* This ensures the button doesn't change color or get an underline when you hover over it */
+/* Rotates the chevron when the project is expanded */
+.project-item.expanded .project-chevron {
+    transform: rotate(90deg);
+}
+
+/* Style for the back-to-projects link button */
+#back-to-projects {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    text-decoration: none;
+}
 #back-to-projects:hover {
-    color: #212529;           /* A slightly darker black for hover effect */
+    color: #212529;
     text-decoration: none;
 }
 
-/* Hide the detailed description by default and set up transitions */
+/* Main transition for the project containers */
+.project-item, .project-details {
+    transition: all 0.6s ease-out;
+    overflow: hidden;
+}
+
 .project-details {
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    /* CHANGED: Duration increased to 0.8s and easing is now 'ease-out' */
-    transition: all 0.8s ease-out; 
 }
 
-/* Base style for each project item to enable its own collapse transition */
-.project-item {
-    /* CHANGED: Duration increased to 0.8s and easing is now 'ease-out' */
-    transition: all 0.8s ease-out;
-    overflow: hidden;
+/* ---- Styles for the CASCADING animation ---- */
+
+/* Initially, hide all direct children within the details section and move them up slightly */
+.project-details > * {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
+
+/* When expanded, fade in the children elements */
+.project-item.expanded .project-details > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply a DELAY to each child to create the stagger/cascade effect */
+.project-item.expanded .project-details hr { transition-delay: 0.1s; }
+.project-item.expanded .project-details h5 { transition-delay: 0.2s; }
+.project-item.expanded .project-details p { transition-delay: 0.3s; }
+.project-item.expanded .project-details ul { transition-delay: 0.3s; }
+.project-item.expanded .project-details ul li:nth-child(1) { transition-delay: 0.4s; }
+.project-item.expanded .project-details ul li:nth-child(2) { transition-delay: 0.5s; }
+.project-item.expanded .project-details ul li:nth-child(3) { transition-delay: 0.6s; }
+.project-item.expanded .project-details ul li:nth-child(4) { transition-delay: 0.7s; }
+/* (You can continue this pattern for more list items) */
+
 
 /* ---- Styles for when a project is expanded ---- */
 
-/* When the main container is in "viewing" mode, hide the non-expanded projects */
 #projects .resume-section-content.viewing-project .project-item:not(.expanded) {
     max-height: 0;
     opacity: 0;
@@ -11870,7 +11904,6 @@ section.resume-section .resume-section-content {
     border: 0;
 }
 
-/* When a project is marked as 'expanded', this makes its details visible */
 #projects .resume-section-content.viewing-project .project-item.expanded .project-details {
     max-height: 2000px;
     opacity: 1;
