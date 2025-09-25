@@ -11815,7 +11815,7 @@ section.resume-section .resume-section-content {
 }
 
 
-/* --- Project Expansion Styles (Corrected) --- */
+/* --- Project Expansion Styles (Updated) --- */
 
 /* Makes the project title look clickable */
 .project-title a {
@@ -11825,22 +11825,29 @@ section.resume-section .resume-section-content {
     text-decoration: underline;
 }
 
+/* Style for the back-to-projects link button */
+#back-to-projects {
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* Hide the detailed description by default and set up transitions */
 .project-details {
     max-height: 0;
     opacity: 0;
-    overflow: hidden; /* This is crucial for hiding content */
+    overflow: hidden;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    /* Define the smooth transition for all properties that will change */
-    transition: all 0.6s ease-in-out;
+    /* CHANGED: Duration increased to 0.8s and easing is now 'ease-out' */
+    transition: all 0.8s ease-out; 
 }
 
 /* Base style for each project item to enable its own collapse transition */
 .project-item {
-    transition: all 0.6s ease-in-out;
+    /* CHANGED: Duration increased to 0.8s and easing is now 'ease-out' */
+    transition: all 0.8s ease-out;
     overflow: hidden;
 }
 
@@ -11857,8 +11864,7 @@ section.resume-section .resume-section-content {
 
 /* When a project is marked as 'expanded', this makes its details visible */
 #projects .resume-section-content.viewing-project .project-item.expanded .project-details {
-    max-height: 2000px; /* A large value to allow content to expand */
+    max-height: 2000px;
     opacity: 1;
-    /* We add back the padding only when it's expanded */
     padding: 1.5rem 1rem;
 }
