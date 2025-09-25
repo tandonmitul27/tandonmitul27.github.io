@@ -11825,10 +11825,18 @@ section.resume-section .resume-section-content {
     text-decoration: underline;
 }
 
-/* Style for the back-to-projects link button */
+/* Style for the back-to-projects link button (FINAL version) */
 #back-to-projects {
+    font-size: 1.1rem;        /* Makes the font slightly larger */
+    font-weight: 600;           /* A bit bolder than normal */
+    color: #495057;           /* Sets the color to the dark gray from your theme */
+    text-decoration: none;    /* Removes the underline */
+}
+
+/* This ensures the button doesn't change color or get an underline when you hover over it */
+#back-to-projects:hover {
+    color: #212529;           /* A slightly darker black for hover effect */
     text-decoration: none;
-    font-weight: bold;
 }
 
 /* Hide the detailed description by default and set up transitions */
