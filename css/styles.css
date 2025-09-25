@@ -11815,7 +11815,7 @@ section.resume-section .resume-section-content {
 }
 
 
-/* --- Project Expansion Styles --- */
+/* --- Project Expansion Styles (Corrected) --- */
 
 /* Makes the project title look clickable */
 .project-title a {
@@ -11825,46 +11825,40 @@ section.resume-section .resume-section-content {
     text-decoration: underline;
 }
 
-/* Base style for each project item to enable smooth transitions */
+/* Hide the detailed description by default and set up transitions */
+.project-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden; /* This is crucial for hiding content */
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Define the smooth transition for all properties that will change */
+    transition: all 0.6s ease-in-out;
+}
+
+/* Base style for each project item to enable its own collapse transition */
 .project-item {
     transition: all 0.6s ease-in-out;
     overflow: hidden;
 }
 
-/* Hide the detailed description by default */
-.project-details {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out, padding 0.6s ease-in-out;
-    padding: 0 1rem; /* Adds space when it becomes visible */
-}
-
 /* ---- Styles for when a project is expanded ---- */
 
-/* When the main container has an expanded project, this smoothly hides the other ones */
+/* When the main container is in "viewing" mode, hide the non-expanded projects */
 #projects .resume-section-content.viewing-project .project-item:not(.expanded) {
     max-height: 0;
     opacity: 0;
-    margin-bottom: 0 !important; /* Overrides Bootstrap's mb-4 class for a clean collapse */
-    padding-top: 0;
-    padding-bottom: 0;
-    border-top: 0;
-    border-bottom: 0;
+    margin-bottom: 0 !important;
+    padding: 0;
+    border: 0;
 }
 
-/* When a project is clicked (and gets the 'expanded' class), this shows its details */
+/* When a project is marked as 'expanded', this makes its details visible */
 #projects .resume-section-content.viewing-project .project-item.expanded .project-details {
-    max-height: 2000px; /* A large value to allow any amount of content to expand */
+    max-height: 2000px; /* A large value to allow content to expand */
     opacity: 1;
+    /* We add back the padding only when it's expanded */
     padding: 1.5rem 1rem;
-}
-
-/* This is a nice touch: it fades out the short summary when the details are shown */
-#projects .resume-section-content.viewing-project .project-item.expanded .project-summary {
-    opacity: 0;
-    max-height: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    transition: all 0.3s ease-in-out;
 }
