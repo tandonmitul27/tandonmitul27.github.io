@@ -575,63 +575,63 @@
           <div class="resume-section-content">
             <h2 class="mb-4">Photography</h2>
         
-            <!-- Example Collection 1 -->
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-              <div class="flex-grow-1">
-                <h3 class="mb-1">
-                  <a data-bs-toggle="collapse" href="#trek-photos" role="button" aria-expanded="false" aria-controls="trek-photos">
-                    Trek to Nainital (Aug 2025)
-                  </a>
-                </h3>
-                <p class="mb-0">A collection of photos from my trek, capturing landscapes, candid moments, and skies.</p>
-                <div class="collapse mt-3" id="trek-photos">
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <img src="assets/photos/trek1.jpg" class="img-fluid rounded shadow" alt="Trek photo 1">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <img src="assets/photos/trek2.jpg" class="img-fluid rounded shadow" alt="Trek photo 2">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <img src="assets/photos/trek3.jpg" class="img-fluid rounded shadow" alt="Trek photo 3">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="flex-shrink-0" style="width: 165px;">
-                <span class="text-primary">Aug 2025</span><br />
-                <span class="text-primary">Nainital, India</span>
-              </div>
-            </div>
+            <div class="accordion" id="photographyAccordion">
         
-            <!-- Example Collection 2 -->
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-              <div class="flex-grow-1">
-                <h3 class="mb-1">
-                  <a data-bs-toggle="collapse" href="#street-photos" role="button" aria-expanded="false" aria-controls="street-photos">
-                    Street Moments in Seoul (Oct 2025)
-                  </a>
+              <!-- Collection 1 -->
+              <div class="accordion-item mb-3">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#trek-photos" aria-expanded="false" aria-controls="trek-photos">
+                    Trek to Nainital (Aug 2025)
+                  </button>
                 </h3>
-                <p class="mb-0">Candid captures of city life and people in Seoul.</p>
-                <div class="collapse mt-3" id="street-photos">
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <img src="assets/photos/seoul1.jpg" class="img-fluid rounded shadow" alt="Street photo 1">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <img src="assets/photos/seoul2.jpg" class="img-fluid rounded shadow" alt="Street photo 2">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <img src="assets/photos/seoul3.jpg" class="img-fluid rounded shadow" alt="Street photo 3">
+                <div id="trek-photos" class="accordion-collapse collapse"
+                  aria-labelledby="headingOne" data-bs-parent="#photographyAccordion">
+                  <div class="accordion-body">
+                    <p>A collection of photos from my trek, capturing landscapes, candid moments, and skies.</p>
+                    <div class="row">
+                      <div class="col-md-4 mb-3">
+                        <img src="assets/photos/trek1.jpg" class="img-fluid rounded shadow" alt="Trek photo 1">
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <img src="assets/photos/trek2.jpg" class="img-fluid rounded shadow" alt="Trek photo 2">
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <img src="assets/photos/trek3.jpg" class="img-fluid rounded shadow" alt="Trek photo 3">
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="flex-shrink-0" style="width: 165px;">
-                <span class="text-primary">Oct 2025</span><br />
-                <span class="text-primary">Seoul, South Korea</span>
+        
+              <!-- Collection 2 -->
+              <div class="accordion-item mb-3">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#street-photos" aria-expanded="false" aria-controls="street-photos">
+                    Street Moments in Seoul (Oct 2025)
+                  </button>
+                </h3>
+                <div id="street-photos" class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo" data-bs-parent="#photographyAccordion">
+                  <div class="accordion-body">
+                    <p>Candid captures of city life and people in Seoul.</p>
+                    <div class="row">
+                      <div class="col-md-4 mb-3">
+                        <img src="assets/photos/seoul1.jpg" class="img-fluid rounded shadow" alt="Street photo 1">
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <img src="assets/photos/seoul2.jpg" class="img-fluid rounded shadow" alt="Street photo 2">
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <img src="assets/photos/seoul3.jpg" class="img-fluid rounded shadow" alt="Street photo 3">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+        
+            </div> <!-- End accordion -->
         
           </div>
         </section>
