@@ -217,7 +217,7 @@
             <div class="resume-section-content">
                 <h2 class="mb-5">Research Experience</h2>        
                 <!-- Pipelined RISC Processor -->
-                <a href="javascript:void(0);" id="back-to-research" class="btn btn-link mb-4" style="display: none;">&larr; Back to All Research Experiences</a>
+                <a href="javascript:void(0);" id="back-to-research" class="btn btn-link mb-4" style="display: none;">&larr; Back to All Research Experience</a>
         
                 <div class="research-item mb-4">
                     <div class="research-header">
@@ -319,63 +319,6 @@
                         <span class="text-primary">IIT Bombay</span>
                     </div>
                 </div>
-<!--                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0"><a href="https://arc.snu.ac.kr/">Architecture and Code Optimization Lab</a>
-                        </h3>
-                        <h4 class="mb-0 fst-italic fs-5 fw-normal">Samsung-SNU Cooperation R&D Center, Seoul National
-                            University
-                        </h4>
-                        <div class="subheading mb-2">Research Intern</div>
-                        <ul>
-                            <li>
-                                <p class="mb-1"><span class="fw-bold">Advisor: </span> Professor <a
-                                        href="https://iamjaelee.github.io/www/">Jae W. Lee</a></p>
-                            </li>
-                            <li>
-                                <p class="mb-1"><span class="fw-bold">Project Goal: </span> To overcome the memory
-                                    capacity problem in extreme-scale
-                                    Deep Neural Network training by using a custom hardware accelerator and
-                                    an efficient Flash-based memory system</p>
-                            </li>
-                            <li>
-                                <p class="mb-1"><span class="fw-bold">My Role: </span> workload analysis through
-                                    simulator (MAESTRO), memory access
-                                    pattern analysis, simulator integration, porting DNN models (Bert, Resnet,
-                                    GPT-3, T5)</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <span class="text-primary">Jul. 2020 — Sep. 2020</span><br />
-                        <span class="text-primary">Seoul, Republic of Korea</span>
-                    </div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0"><a href="http://scale.snu.ac.kr/">SCALable Computer Architecture Lab</a>
-                        </h3>
-                        <h4 class="mb-0 fst-italic fs-5 fw-normal">Graduate School of Convergence Science and
-                            Technology, Seoul National
-                            University
-                        </h4>
-                        <div class="subheading mb-2">Research Intern</div>
-                        <ul>
-                            <li>
-                                <p class="mb-1"><span class="fw-bold">Advisor: </span> Professor <a
-                                        href="http://scale.snu.ac.kr/members">Jung Ho Ahn</a></p>
-                            </li>
-                            <li>
-                                <p class="mb-1"><span class="fw-bold">Research Topic: </span> Designing a Homomorphic
-                                    Encryption Accelerator</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <span class="text-primary">Jan. 2022 — Apr. 2022</span><br />
-                        <span class="text-primary">Seoul, Republic of Korea</span>
-                    </div>
-                </div> -->
             </div>
         </section>
         <hr class="m-0" />
@@ -865,6 +808,57 @@
             if (expandedItem) {
                 // Remove the classes to reverse the animation and hide the details
                 projectsContainer.classList.remove('viewing-project');
+                expandedItem.classList.remove('expanded');
+            }
+
+            // Hide the back button again
+            backButton.style.display = 'none';
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const researchContainer = document.querySelector('#research .resume-section-content');
+        const researchItems = document.querySelectorAll('.research-item');
+        const backButton = document.getElementById('back-to-research');
+
+        // Add a click listener to each project's header
+        researchItems.forEach(item => {
+            const header = item.querySelector('.research-header');
+            header.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Don't allow clicking another project while one is open
+                if (researchContainer.classList.contains('viewing-research')) {
+                    return;
+                }
+                
+                // Add classes to the container and the clicked item to trigger CSS animations
+                researchContainer.classList.add('viewing-research');
+                item.classList.add('expanded');
+
+                // Show the back button
+                backButton.style.display = 'inline-block';
+
+                // Smoothly scroll to the top of the projects section for a better view
+                document.getElementById('projects').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Add click listener for the 'Back' button
+        backButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Find the currently expanded project
+            const expandedItem = document.querySelector('.research-item.expanded');
+            
+            if (expandedItem) {
+                // Remove the classes to reverse the animation and hide the details
+                researchContainer.classList.remove('viewing-research');
                 expandedItem.classList.remove('expanded');
             }
 
