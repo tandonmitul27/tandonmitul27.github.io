@@ -48,7 +48,7 @@
             </ul>
     
             <!-- Globe container pushed to bottom -->
-            <div class="globe-container" style="width:200px; height:200px; margin-top:auto; margin-bottom:10px; align-self:center;"></div>
+            <div class="globe-container" id="globe-container" style="width:200px; height:200px; margin-top:auto; margin-bottom:10px; align-self:center;"></div>
         </div>
     </nav>
     <!-- Page Content-->
@@ -872,7 +872,7 @@ window.addEventListener('DOMContentLoaded', function() {
     script.src = "//mapmyvisitors.com/globe.js?d=EmJ394Y7FceLCsQqjVSRiimoj5o5zgQi5oz9Q-zGMDg";
     script.id = "mmvst_globe";
 
-    var globeContainer = document.getElementById('globe-container');
+    var globeContainer = document.querySelector('#globe-container');
     if (globeContainer) {
         globeContainer.appendChild(script);
     } else {
