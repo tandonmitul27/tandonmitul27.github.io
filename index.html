@@ -49,7 +49,7 @@
     
             <!-- Globe container pushed to bottom -->
             <div class="globe-container" id="globe-container" style="width:175px; height:175px; margin-top:20px; margin-bottom:auto; align-self:center;"></div>
-            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8"></script>
+            <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8"></script> -->
         </div>
     </nav>
     <!-- Page Content-->
@@ -867,18 +867,18 @@ window.addEventListener('DOMContentLoaded', function() {
 }); 
 </script> -->
 
-<!-- <script>
+<script>
     var script = document.createElement('script');
-    script.src = "//mapmyvisitors.com/globe.js?d=Y-0A2oslHPGfjoBzcyTQXfmCBlEG9GQTPdK1z3qTEZ0";
-    script.id = "mmvst_globe";
-
+    script.src = "//clustrmaps.com/globe.js?d=C58P3QY_kACha9SMJjDYC-nt36vZNqUqGODFG8fmz-8";
+    script.id = "clstr_globe";
+    script.type = "text/javascript";
     var globeContainer = document.querySelector('#globe-container');
     if (globeContainer) {
         globeContainer.appendChild(script);
     } else {
         console.warn("Element with ID 'globe-container' not found.");
     }
-</script> -->
+</script>
 </body>
 
 </html>
