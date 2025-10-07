@@ -581,7 +581,7 @@
         
         <!-- Photography -->
         <hr class="m-0" />
-        <section class="resume-section" id="photography">
+        <section class="resume-section" id="photo">
               <div class="resume-section-content">
                 <h2 class="mb-4">Photography</h2>
                 <h4 class="mb-4">
@@ -591,7 +591,7 @@
                 </h4>
             
                 <!-- Back Button -->
-                <a href="javascript:void(0);" id="back-to-photography" class="btn btn-link mb-4" style="display: none;">
+                <a href="javascript:void(0);" id="back-to-photo" class="btn btn-link mb-4" style="display: none;">
                   &larr; Back to All Collections
                 </a>
             
@@ -861,9 +861,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const photoContainer = document.querySelector('#photography .resume-section-content');
+      const photoContainer = document.querySelector('#photo .resume-section-content');
       const photoItems = document.querySelectorAll('.photo-item');
-      const backButton = document.getElementById('back-to-photography');
+      const backButton = document.getElementById('back-to-photo');
     
       photoItems.forEach(item => {
         const header = item.querySelector('.photo-header');
@@ -879,7 +879,7 @@
           backButton.style.display = 'inline-block';
     
           // Scroll to top of the photography section
-          document.getElementById('photography').scrollIntoView({
+          document.getElementById('photo').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
