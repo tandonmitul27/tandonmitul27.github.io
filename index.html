@@ -1073,7 +1073,8 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = index;
         const thumb = thumbnails[currentIndex];
         lightboxImg.src = thumb.src;
-        lightboxCaption.textContent = thumb.dataset.caption || '';
+        // Use innerHTML to render <br> tags
+        lightboxCaption.innerHTML = thumb.dataset.caption || '';
         lightboxOverlay.classList.add('show');
 
         // Disable left/right buttons at ends
