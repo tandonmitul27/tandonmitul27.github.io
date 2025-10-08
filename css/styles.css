@@ -11934,34 +11934,34 @@ section.resume-section .resume-section-content {
 /* --- Photography Expansion Styles (Final Smoother Version) --- */
 
 /* Style for the back-to-research link button */
-#back-to-photo {
+#back-to-photography {
     font-size: 1.1rem;
     font-weight: 600;
     color: #495057;
     text-decoration: none;
 }
-#back-to-photo:hover {
+#back-to-photography:hover {
     color: #212529;
     text-decoration: none;
 }
 
 /* Makes the project title look clickable */
-.photo-title a {
+.photography-title a {
     cursor: pointer;
 }
-.photo-title a:hover {
+.photography-title a:hover {
     text-decoration: underline;
 }
 
 /* Set up the new, smoother transition for both the project item and its details */
-.photo-item, .photo-details {
+.photography-item, .photography-details {
     /* This custom cubic-bezier curve creates a very smooth ease-in and ease-out effect */
     transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
     overflow: hidden;
 }
 
 /* Default collapsed state for the details */
-.photo-details {
+.photography-details {
     max-height: 0;
     opacity: 0;
     padding-top: 0;
@@ -11973,7 +11973,7 @@ section.resume-section .resume-section-content {
 /* ---- Styles for when a project is expanded ---- */
 
 /* Hides the non-expanded projects */
-#photo .photo-section-content.viewing-photo .photo-item:not(.expanded) {
+#photography .photography-section-content.viewing-photography .photography-item:not(.expanded) {
     max-height: 0;
     opacity: 0;
     margin-bottom: 0 !important;
@@ -11982,7 +11982,7 @@ section.resume-section .resume-section-content {
 }
 
 /* Makes the expanded project's details visible */
-#photo .photo-section-content.viewing-photo .photo-item.expanded .photo-details {
+#photography .photography-section-content.viewing-photography .photography-item.expanded .photography-details {
     max-height: 2000px;
     opacity: 1;
     padding: 1.5rem 1rem;
