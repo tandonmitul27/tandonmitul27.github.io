@@ -750,7 +750,14 @@
                         </ul>
                     </div>
                 </div>
-        
+
+                <!-- Lightbox Overlay -->
+                <div id="lightbox-overlay">
+                    <span id="lightbox-close">&times;</span>
+                    <img id="lightbox-img" src="" alt="">
+                    <p id="lightbox-caption"></p>
+                </div>
+                
                 </div>
         </section>
 
@@ -1056,8 +1063,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+    
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Lightbox logic
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
 
+    const thumbnails = document.querySelectorAll('.photography-thumb');
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            lightboxImg.src = thumb.src;
+            lightboxCaption.textContent = thumb.dataset.caption || '';
+            // Add class to show overlay smoothly
+            lightboxOverlay.classList.add('show');
+        });
+    });
 
+    function closeLightbox() {
+        // Remove the show class to trigger fade-out
+        lightboxOverlay.classList.remove('show');
+        // Delay clearing image to allow transition
+        setTimeout(() => { lightboxImg.src = ''; }, 500);
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Close lightbox when clicking outside the image
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay) closeLightbox();
+    });
+});
+</script>
 <!-- <script type="text/javascript">
 window.addEventListener('DOMContentLoaded', function() {
     var script = document.createElement('script');
@@ -1075,6 +1114,9 @@ window.addEventListener('DOMContentLoaded', function() {
     document.getElementById('globe-container').appendChild(script);
 }); 
 </script> -->
+
+
+
 
 <script>
     var script = document.createElement('script');
