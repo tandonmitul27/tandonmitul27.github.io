@@ -11999,7 +11999,7 @@ section.resume-section .resume-section-content {
 
 /* Reduce image size a bit */
 .photography-thumb {
-    max-width: 100%;
+    max-width: 60%;
     cursor: pointer;
 }
 
