@@ -11998,17 +11998,17 @@ section.resume-section .resume-section-content {
 }
 
 /* Reduce image size a bit */
-/* .photography-thumb {
+.photography-thumb {
     max-width: 100%;
     cursor: pointer;
-} */
+}
 
-.photography-thumb {
-    max-width: 220px; /* adjust as needed */
+/* .photography-thumb {
+    max-width: 220px; 
     width: 100%;
     height: auto;
     cursor: pointer;
-}
+} */
 
 #lightbox-overlay {
     position: fixed;
