@@ -12003,7 +12003,6 @@ section.resume-section .resume-section-content {
     cursor: pointer;
 }
 
-/* Lightbox overlay */
 #lightbox-overlay {
     position: fixed;
     top: 0;
@@ -12032,7 +12031,7 @@ section.resume-section .resume-section-content {
     max-width: 80%;
     max-height: 70%;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    margin: 0 3rem; /* space for arrows */
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     transform: scale(0.8);
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -12048,6 +12047,7 @@ section.resume-section .resume-section-content {
     color: #fff;
     text-align: center;
     font-size: 1.1rem;
+    margin-top: 1rem;
     opacity: 0;
     transition: opacity 0.5s ease 0.2s;
 }
@@ -12056,9 +12056,11 @@ section.resume-section .resume-section-content {
     opacity: 1;
 }
 
-#lightbox-close, #lightbox-prev, #lightbox-next {
+/* Close button (top right) */
+#lightbox-close {
     position: absolute;
     top: 20px;
+    right: 30px;
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
@@ -12068,24 +12070,39 @@ section.resume-section .resume-section-content {
     transition: opacity 0.5s ease 0.2s;
 }
 
-#lightbox-overlay.show #lightbox-close,
+#lightbox-overlay.show #lightbox-close {
+    opacity: 1;
+}
+
+/* Left/Right navigation buttons on sides of image */
+#lightbox-prev, #lightbox-next {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    transform: translateY(-50%);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s;
+}
+
 #lightbox-overlay.show #lightbox-prev,
 #lightbox-overlay.show #lightbox-next {
     opacity: 1;
 }
 
-#lightbox-close {
-    right: 30px;
-}
-
 #lightbox-prev {
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 10%;
 }
 
 #lightbox-next {
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 10%;
+}
+
+/* Hide left/right buttons if not applicable (controlled via JS) */
+#lightbox-prev.hidden, #lightbox-next.hidden {
+    display: none;
 }
