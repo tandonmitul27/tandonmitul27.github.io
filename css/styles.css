@@ -11973,7 +11973,7 @@ section.resume-section .resume-section-content {
 /* ---- Styles for when a project is expanded ---- */
 
 /* Hides the non-expanded projects */
-#photography .photography-section-content.viewing-photography .photography-item:not(.expanded) {
+#photography .resume-section-content.viewing-photography .photography-item:not(.expanded) {
     max-height: 0;
     opacity: 0;
     margin-bottom: 0 !important;
@@ -11982,7 +11982,7 @@ section.resume-section .resume-section-content {
 }
 
 /* Makes the expanded project's details visible */
-#photography .photography-section-content.viewing-photography .photography-item.expanded .photography-details {
+#photography .resume-section-content.viewing-photography .photography-item.expanded .photography-details {
     max-height: 2000px;
     opacity: 1;
     padding: 1.5rem 1rem;
