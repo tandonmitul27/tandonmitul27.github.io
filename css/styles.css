@@ -11987,3 +11987,7 @@ section.resume-section .resume-section-content {
     opacity: 1;
     padding: 1.5rem 1rem;
 }
+
+#photography .resume-section-content.viewing-photography > h4 {
+    display: none;
+}
