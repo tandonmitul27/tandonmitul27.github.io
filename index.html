@@ -861,25 +861,25 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const photoContainer = document.querySelector('#photo .resume-section-content');
-      const photoItems = document.querySelectorAll('.photo-item');
-      const backButton = document.getElementById('back-to-photo');
+      const photographyContainer = document.querySelector('#photography .resume-section-content');
+      const photographyItems = document.querySelectorAll('.photography-item');
+      const backButton = document.getElementById('back-to-photography');
     
-      photoItems.forEach(item => {
-        const header = item.querySelector('.photo-header');
+      photographyItems.forEach(item => {
+        const header = item.querySelector('.photography-header');
         header.addEventListener('click', (e) => {
           e.preventDefault();
     
           // Don't allow another to open if one is already expanded
-          if (photoContainer.classList.contains('viewing-photo')) return;
+          if (photographyContainer.classList.contains('viewing-photography')) return;
     
           // Expand this collection
-          photoContainer.classList.add('viewing-photo');
+          photographyContainer.classList.add('viewing-photography');
           item.classList.add('expanded');
           backButton.style.display = 'inline-block';
     
           // Scroll to top of the photography section
-          document.getElementById('photo').scrollIntoView({
+          document.getElementById('photography').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
@@ -889,9 +889,9 @@
       // Back button logic
       backButton.addEventListener('click', (e) => {
         e.preventDefault();
-        const expandedItem = document.querySelector('.photo-item.expanded');
+        const expandedItem = document.querySelector('.photography-item.expanded');
         if (expandedItem) {
-          photoContainer.classList.remove('viewing-photo');
+          photographyContainer.classList.remove('viewing-photography');
           expandedItem.classList.remove('expanded');
         }
         backButton.style.display = 'none';
