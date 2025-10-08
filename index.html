@@ -1075,6 +1075,10 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxImg.src = thumb.src;
         lightboxCaption.textContent = thumb.dataset.caption || '';
         lightboxOverlay.classList.add('show');
+
+        // Disable left/right buttons at ends
+        lightboxPrev.classList.toggle('hidden', currentIndex === 0);
+        lightboxNext.classList.toggle('hidden', currentIndex === thumbnails.length - 1);
     }
 
     function closeLightbox() {
@@ -1083,13 +1087,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showPrev() {
-        currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-        openLightbox(currentIndex);
+        if (currentIndex > 0) openLightbox(currentIndex - 1);
     }
 
     function showNext() {
-        currentIndex = (currentIndex + 1) % thumbnails.length;
-        openLightbox(currentIndex);
+        if (currentIndex < thumbnails.length - 1) openLightbox(currentIndex + 1);
     }
 
     thumbnails.forEach((thumb, idx) => {
