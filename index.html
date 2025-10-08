@@ -933,41 +933,52 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const photographyContainer = document.querySelector('#photography .resume-section-content');
-      const photographyItems = document.querySelectorAll('.photography-item');
-      const backButton = document.getElementById('back-to-photography');
-    
-      photographyItems.forEach(item => {
-        const header = item.querySelector('.photography-header');
-        header.addEventListener('click', (e) => {
-          e.preventDefault();
-    
-          // Don't allow another to open if one is already expanded
-          if (photographyContainer.classList.contains('viewing-photography')) return;
-    
-          // Expand this collection
-          photographyContainer.classList.add('viewing-photography');
-          item.classList.add('expanded');
-          backButton.style.display = 'inline-block';
-    
-          // Scroll to top of the photography section
-          document.getElementById('photography').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+        const photographyContainer = document.querySelector('#photography .resume-section-content');
+        const photographyItems = document.querySelectorAll('.photography-item');
+        const backButton = document.getElementById('back-to-photography');
+
+        // Add a click listener to each project's header
+        photographyItems.forEach(item => {
+            const header = item.querySelector('.photography-header');
+            header.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Don't allow clicking another project while one is open
+                if (photographyContainer.classList.contains('viewing-photography')) {
+                    return;
+                }
+                
+                // Add classes to the container and the clicked item to trigger CSS animations
+                photographyContainer.classList.add('viewing-photography');
+                item.classList.add('expanded');
+
+                // Show the back button
+                backButton.style.display = 'inline-block';
+
+                // Smoothly scroll to the top of the projects section for a better view
+                document.getElementById('photography').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
         });
-      });
-    
-      // Back button logic
-      backButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        const expandedItem = document.querySelector('.photography-item.expanded');
-        if (expandedItem) {
-          photographyContainer.classList.remove('viewing-photography');
-          expandedItem.classList.remove('expanded');
-        }
-        backButton.style.display = 'none';
-      });
+
+        // Add click listener for the 'Back' button
+        backButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Find the currently expanded project
+            const expandedItem = document.querySelector('.photography-item.expanded');
+            
+            if (expandedItem) {
+                // Remove the classes to reverse the animation and hide the details
+                photographyContainer.classList.remove('viewing-photography');
+                expandedItem.classList.remove('expanded');
+            }
+
+            // Hide the back button again
+            backButton.style.display = 'none';
+        });
     });
 </script>
 
