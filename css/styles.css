@@ -11998,8 +11998,15 @@ section.resume-section .resume-section-content {
 }
 
 /* Reduce image size a bit */
+/* .photography-thumb {
+    max-width: 100%;
+    cursor: pointer;
+} */
+
 .photography-thumb {
-    max-width: 100%; /* adjust as needed */
+    max-width: 220px; /* adjust as needed */
+    width: 100%;
+    height: auto;
     cursor: pointer;
 }
 
