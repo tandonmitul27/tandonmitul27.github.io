@@ -12028,8 +12028,8 @@ section.resume-section .resume-section-content {
 }
 
 #lightbox-img {
-    max-width: 80%;
-    max-height: 70%;
+    max-width: 100%;
+    max-height: 100vh;
     border-radius: 8px;
     margin: 0 3rem; /* space for arrows */
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
