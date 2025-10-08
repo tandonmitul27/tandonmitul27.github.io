@@ -936,7 +936,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
         const photographyContainer = document.querySelector('#photography .resume-section-content');
         const photographyItems = document.querySelectorAll('.photography-item');
@@ -985,7 +985,61 @@
             backButton.style.display = 'none';
         });
     });
+</script> -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const photographyContainer = document.querySelector('#photography .resume-section-content');
+    const photographyItems = document.querySelectorAll('.photography-item');
+    const backButton = document.getElementById('back-to-photography');
+    const introText = photographyContainer.querySelector('h4'); // select the intro text
+
+    // Add a click listener to each collection's header
+    photographyItems.forEach(item => {
+        const header = item.querySelector('.photography-header');
+        header.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Don't allow clicking another collection while one is open
+            if (photographyContainer.classList.contains('viewing-photography')) return;
+
+            // Expand this collection
+            photographyContainer.classList.add('viewing-photography');
+            item.classList.add('expanded');
+
+            // Hide the intro text
+            if (introText) introText.style.display = 'none';
+
+            // Show the back button
+            backButton.style.display = 'inline-block';
+
+            // Smoothly scroll to the top of the photography section
+            document.getElementById('photography').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+
+    // Back button logic
+    backButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const expandedItem = document.querySelector('.photography-item.expanded');
+        if (expandedItem) {
+            photographyContainer.classList.remove('viewing-photography');
+            expandedItem.classList.remove('expanded');
+        }
+
+        // Show the intro text again
+        if (introText) introText.style.display = 'block';
+
+        // Hide the back button
+        backButton.style.display = 'none';
+    });
+});
 </script>
+
 
 <!-- <script type="text/javascript">
 window.addEventListener('DOMContentLoaded', function() {
