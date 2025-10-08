@@ -11988,6 +11988,83 @@ section.resume-section .resume-section-content {
     padding: 1.5rem 1rem;
 }
 
-#photography .resume-section-content.viewing-photography > h4 {
-    display: none;
+
+
+
+/* Lightbox overlay */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    padding: 2rem;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, background 0.5s ease;
+}
+
+/* Show the overlay */
+#lightbox-overlay.show {
+    background: rgba(0,0,0,0.8);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Lightbox image */
+#lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transform: scale(0.8);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+/* Image visible */
+#lightbox-overlay.show #lightbox-img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Lightbox caption */
+#lightbox-caption {
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s; /* slight delay for caption */
+}
+
+/* Caption visible */
+#lightbox-overlay.show #lightbox-caption {
+    opacity: 1;
+}
+
+/* Close button */
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s;
+}
+
+/* Close button visible */
+#lightbox-overlay.show #lightbox-close {
+    opacity: 1;
 }
