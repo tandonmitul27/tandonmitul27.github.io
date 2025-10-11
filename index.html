@@ -724,24 +724,15 @@
                                 <p class="mt-2 gallery-caption">5. Breaking Free</p>
                             </div>
                         </div>
-                       <div class="comments">
-                          <h4>Share your thoughts</h4>
-                            <script src="https://giscus.app/client.js"
-                                    data-repo="tandonmitul27/tandonmitul27.github.io"
-                                    data-repo-id="R_kgDOPt61-w"
-                                    data-category="General" 
-                                    data-category-id="DIC_kwDOPt61-84CwhCp"
-                                    data-mapping="pathname"
-                                    data-strict="0"
-                                    data-reactions-enabled="1"
-                                    data-emit-metadata="0"
-                                    data-input-position="bottom"
-                                    data-theme="noborder_light"
-                                    data-lang="en"
-                                    crossorigin="anonymous"
-                                    async>
+                       <div id="commentbox"></div>
+                            <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+                            <script>
+                              commentBox('5725840541220864-proj', {
+                                className: 'commentbox',
+                                defaultBoxId: 'commentbox',
+                                backgroundColor: null
+                              });
                             </script>
-                        </div>
                     </div>
                 </div>
         
