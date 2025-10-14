@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tandonmitul27.github.io/sitemap.xml
