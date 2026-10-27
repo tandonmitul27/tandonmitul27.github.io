@@ -260,7 +260,8 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <p>I profiled LLM serving systems across retrieval-augmented and agentic pipelines and found the CPU under 5% utilized, too little for CPU-side gains to move end-to-end throughput, so I reoriented the work toward CPU-based inference. Characterizing Llama3-8B and Qwen2-7B on an Intel Xeon Gold CPU revealed heavily over-provisioned hardware: a simple bimodal predictor came within 1% IPC of TAGE, and prefill throughput held even with the reorder buffer cut to 38% of its size. I am now building an RVV-enabled RISC-V model in Sniper, calibrated against the XiangShan core, to explore CPU microarchitecture for efficient LLM inference.</p>
+                        <p>Profiling LLM serving across retrieval-augmented and agentic pipelines showed the CPU under 5% utilized and active only in short bursts, an opportunity to raise its utilization by handing it part of the inference work. Characterizing Llama3-8B and Qwen2-7B on an Intel Xeon Gold CPU revealed over-provisioned hardware: a bimodal predictor came within 1% IPC of TAGE, and prefill throughput held with the reorder buffer at 38% of its size.</p>
+                        <p>The caches and hardware prefetchers were also found to capture little of the weight and KV-cache traffic, motivating a proposed CPU mode for LLM inference that trims this over-provisioned hardware and serves that traffic more efficiently. Ongoing work builds an RVV-enabled RISC-V model in Sniper, calibrated against the XiangShan core, to evaluate the performance and energy of the proposal against a general-purpose baseline.</p>
                     </div>
                 </div>
 
@@ -280,8 +281,8 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <p>I implemented the actor model on Vortex, an open-source RISC-V GPU, mapping one actor per hardware thread, and found that global-memory message passing consumed 97% of cycles, making it 9× slower than the non-actor baseline. The cost came from two sources: scattered writes the coalescer cannot merge, leaving one DRAM write per message, and the one-actor-per-thread mapping, which tied the actor count to the machine size and left the GPU issuing at 6% of peak.</p>
-                        <p>I proposed a message transport that appends each message with a single L2 atomic, groups messages by destination so a warp’s writes land together, sizes each group to fit the receiver’s cache, and drains one receiver’s queue per warp. It achieves 35.8× and 25.6× speedups on Histogram and Index Gather over naive actor versions, and 6.3× and 1.5× over their non-actor versions, with gains growing as the problem scales. I am now working on hardware/software co-design of lightweight send and receive instructions, and on generalizing the layer to other workloads dominated by fine-grained scattered communication.</p>
+                        <p>Implementing the actor model on Vortex, an open-source RISC-V GPU, with one actor per hardware thread revealed that global-memory message passing consumed 97% of cycles, making it 9× slower than the non-actor baseline. The cost came from two sources: scattered writes the coalescer cannot merge, leaving one DRAM write per message, and the one-actor-per-thread mapping, which tied the actor count to the machine size and left the GPU issuing at 6% of peak.</p>
+                        <p>The proposed message transport appends each message with a single L2 atomic, groups messages by destination so a warp’s writes land together, sizes each group to fit the receiver’s cache, and drains one receiver’s queue per warp. It achieves 35.8× and 25.6× speedups on Histogram and Index Gather over naive actor versions, and 6.3× and 1.5× over their non-actor versions, with gains growing as the problem scales. Ongoing work explores hardware/software co-design of lightweight send and receive instructions, and on generalizing the layer to other workloads dominated by fine-grained scattered communication.</p>
                     </div>
                 </div>
 
@@ -301,8 +302,8 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <p>Studying HiT, the state-of-the-art sparse matrix multiplication accelerator, I found that its multipliers take only 25% of chip area and 37% of power, while the units that pair and gather their operands take 42% and 52%. This overhead comes from intersection, a comparator array that searches every cycle for nonzeros to share a lane yet matches only 0.12% of the time, and from transport, a reduction spread so widely that nearly every partial sum rides a ring to its accumulator.</p>
-                        <p>Since the sparsity pattern is known offline, I proposed a dataflow that binds the schedule ahead of time using longest-processing-time list scheduling, fixing which nonzero fills which lane each cycle, and folds each cluster’s 32-cell ring into a 4×8 grid. Binding removes the comparator array, as lanes now follow a fixed order rather than a search, and folding removes the ring and half the buffer ports, as partial sums now walk an 8-cell chain. In a cycle-accurate simulator on SuiteSparse matrices, the design is 3.08× faster than HiT on every sparse-sparse workload and 1.37× faster across the rest, on a 17.9% smaller chip drawing 19.4% less power in the sparse regime.</p>
+                        <p>A study of HiT, the state-of-the-art sparse matrix multiplication accelerator, showed that its multipliers take only 25% of chip area and 37% of power, while the units that pair and gather their operands take 42% and 52%. This overhead comes from intersection, a comparator array that searches every cycle for nonzeros to share a lane yet matches only 0.12% of the time, and from transport, a reduction spread so widely that nearly every partial sum rides a ring to its accumulator.</p>
+                        <p>Since the sparsity pattern is known offline, the proposed dataflow binds the schedule ahead of time using longest-processing-time list scheduling, fixing which nonzero fills which lane each cycle, and folds each cluster’s 32-cell ring into a 4×8 grid. Binding removes the comparator array, as lanes now follow a fixed order rather than a search, and folding removes the ring and half the buffer ports, as partial sums now walk an 8-cell chain. In a cycle-accurate simulator on SuiteSparse matrices, the design is 3.08× faster than HiT on every sparse-sparse workload and 1.37× faster across the rest, on a 17.9% smaller chip drawing 19.4% less power in the sparse regime.</p>
                     </div>
                 </div>
 
@@ -368,7 +369,7 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <p>I studied 3D DRAM technologies, including High Bandwidth Memory and the Hybrid Memory Cube, and analyzed SILO, which uses a private die-stacked DRAM cache similar to HMC. Building on this, I implemented a 64 MB HMC tag array for an HBM cache in ChampSim to enable set associativity in HBM, achieving an 8.5% improvement over a direct-mapped HBM cache and a 24.27% speedup over the baseline.</p>
+                        <p>This work studied 3D DRAM technologies, including High Bandwidth Memory and the Hybrid Memory Cube, and analyzed SILO, which uses a private die-stacked DRAM cache similar to HMC. Building on this, a 64 MB HMC tag array for an HBM cache was implemented in ChampSim to enable set associativity in HBM, achieving an 8.5% improvement over a direct-mapped HBM cache and a 24.27% speedup over the baseline.</p>
                     </div>
                 </div>
             </div>
