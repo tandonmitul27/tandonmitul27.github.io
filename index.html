@@ -72,8 +72,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publications">Publications</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#research">Research Experience</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#teaching">Teaching</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#teaching">Teaching &amp; Service</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#photography">Photography</a></li>
             </ul>
     
@@ -150,21 +149,6 @@
                             <li>
                                 <h3 class="mb-1">
                                     <a href="https://tandonmitul27.github.io/" class="text-decoration-none" target="_blank" rel="noopener">
-                                        OCEAN: Offset Data-aware Cache Management Scheme for Graph Analytics
-                                    </a>
-                                </h3>
-                                <p class="mb-1">Varun Venkitaraman*, <u><b>Mitul Tandon</b></u>*, Tejeshwar Bhagatsing Thorawade, Nayan Barhate, Keerthi Sagar Kokkiligadda, N. Sharma, Newton Singh, Nirmal Boran and Virendra Singh
-                                </p>
-                                <div class="mb-2">
-                                    <a class="fw-bold" href="https://hipc.org/">
-                                        IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC) 2026 (Poster)
-                                    </a>
-                                </div>
-                                <div><p><br/></p></div>
-                            </li>
-                            <li>
-                                <h3 class="mb-1">
-                                    <a href="https://tandonmitul27.github.io/" class="text-decoration-none" target="_blank" rel="noopener">
                                         An Energy-Efficient Virtual-Real Cache Hierarchy
                                     </a>
                                 </h3>
@@ -211,11 +195,26 @@
                     <div class="flex-shrink-0"></div>
                 </div>
         
-                <!-- Workshop Publications -->
-                <h2 style="font-size:2rem; color:#000; font-weight:bold;" class="mb-3 mt-4">Workshop</h2>
+                <!-- Workshop & Poster Publications -->
+                <h2 style="font-size:2rem; color:#000; font-weight:bold;" class="mb-3 mt-4">Workshops &amp; Posters</h2>
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
                         <ul class="fa-ul mb-0">
+                            <li>
+                                <h3 class="mb-1">
+                                    <a href="https://tandonmitul27.github.io/" class="text-decoration-none" target="_blank" rel="noopener">
+                                        OCEAN: Offset Data-aware Cache Management Scheme for Graph Analytics
+                                    </a>
+                                </h3>
+                                <p class="mb-1">Varun Venkitaraman*, <u><b>Mitul Tandon</b></u>*, Tejeshwar Bhagatsing Thorawade, Nayan Barhate, Keerthi Sagar Kokkiligadda, N. Sharma, Newton Singh, Nirmal Boran and Virendra Singh
+                                </p>
+                                <div class="mb-2">
+                                    <a class="fw-bold" href="https://hipc.org/">
+                                        IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC) 2026 — Poster
+                                    </a>
+                                </div>
+                                <div><p><br/></p></div>
+                            </li>
                             <li>
                                 <h3 class="mb-1">
                                     <a href="https://oscar-workshop.github.io/" class="text-decoration-none" target="_blank" rel="noopener">
@@ -261,11 +260,7 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <ul>
-                            <li>Profiled LLM serving systems across retrieval-augmented and agentic pipelines and found the CPU under 5% utilized, too little for CPU-side gains to move system throughput, and so reoriented the research toward CPU-based inference.</li>
-                            <li>Characterized Llama3-8B and Qwen2-7B on an Intel Xeon Gold CPU, where a bimodal predictor came within 1% IPC of TAGE and prefill throughput held with the reorder buffer at 38% of its size, all pointing to over-provisioned hardware.</li>
-                            <li>Working on an RVV-enabled RISC-V model in Sniper, calibrated against the XiangShan core, to explore CPU microarchitecture for efficient LLM inference.</li>
-                        </ul>
+                        <p>I profiled LLM serving systems across retrieval-augmented and agentic pipelines and found the CPU under 5% utilized, too little for CPU-side gains to move end-to-end throughput, so I reoriented the work toward CPU-based inference. Characterizing Llama3-8B and Qwen2-7B on an Intel Xeon Gold CPU revealed heavily over-provisioned hardware: a simple bimodal predictor came within 1% IPC of TAGE, and prefill throughput held even with the reorder buffer cut to 38% of its size. I am now building an RVV-enabled RISC-V model in Sniper, calibrated against the XiangShan core, to explore CPU microarchitecture for efficient LLM inference.</p>
                     </div>
                 </div>
 
@@ -285,13 +280,8 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <ul>
-                            <li>Implemented the actor model on Vortex, an open-source RISC-V GPU, mapping one actor per hardware thread, and found global-memory message passing to consume 97% of cycles, causing a 9× slowdown against the non-actor baseline.</li>
-                            <li>Traced the cost to scattered writes the coalescer cannot merge, leaving one DRAM write per message sent, and to the one-actor-per-thread mapping, which fixed the actor count to the machine size and left the GPU issuing at 6% of peak.</li>
-                            <li>Proposed a message transport that appends each message with one L2 atomic, groups them by destination so a warp’s writes land together, sizes each group to fit the receiver’s cache, and drains one receiver’s queue per warp.</li>
-                            <li>Achieved 35.8× and 25.6× speedups on Histogram and Index Gather over naive actor versions and 6.3× and 1.5× over their non-actor versions, and these gains grow as the problem scales.</li>
-                            <li>Working on hardware/software co-design of lightweight send and receive instructions, and on generalizing the layer to other workloads dominated by fine-grained scattered communication.</li>
-                        </ul>
+                        <p>I implemented the actor model on Vortex, an open-source RISC-V GPU, mapping one actor per hardware thread, and found that global-memory message passing consumed 97% of cycles, making it 9× slower than the non-actor baseline. The cost came from two sources: scattered writes the coalescer cannot merge, leaving one DRAM write per message, and the one-actor-per-thread mapping, which tied the actor count to the machine size and left the GPU issuing at 6% of peak.</p>
+                        <p>I proposed a message transport that appends each message with a single L2 atomic, groups messages by destination so a warp’s writes land together, sizes each group to fit the receiver’s cache, and drains one receiver’s queue per warp. It achieves 35.8× and 25.6× speedups on Histogram and Index Gather over naive actor versions, and 6.3× and 1.5× over their non-actor versions, with gains growing as the problem scales. I am now working on hardware/software co-design of lightweight send and receive instructions, and on generalizing the layer to other workloads dominated by fine-grained scattered communication.</p>
                     </div>
                 </div>
 
@@ -311,13 +301,8 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <ul>
-                            <li>Studied HiT, the state-of-the-art sparse matrix multiplication accelerator, and found its multipliers holding 25% of chip area and 37% of power while the units that pair and gather their operands hold 42% and 52%.</li>
-                            <li>Traced this to intersection, a comparator array searching every cycle for nonzeros to share a lane and matching 0.12% of the time, and transport, a reduction so widely spread that nearly every partial sum rides a ring to its accumulator.</li>
-                            <li>Realized the pattern is known offline, and proposed a dataflow that binds the schedule by longest-processing-time list scheduling, fixing which nonzero fills which lane each cycle, and folds a cluster’s 32-cell ring into a 4 by 8 grid.</li>
-                            <li>Showed binding removes the comparator array, since the lanes now follow a fixed order rather than a search, and folding removes the ring and half the buffer ports, since partial sums now walk an 8-cell chain.</li>
-                            <li>Modelled the design in a cycle-accurate simulator on SuiteSparse matrices and measured 3.08× over HiT on every sparse-sparse workload and 1.37× across the rest, on a 17.9% smaller chip drawing 19.4% less power in the sparse regime.</li>
-                        </ul>
+                        <p>Studying HiT, the state-of-the-art sparse matrix multiplication accelerator, I found that its multipliers take only 25% of chip area and 37% of power, while the units that pair and gather their operands take 42% and 52%. This overhead comes from intersection, a comparator array that searches every cycle for nonzeros to share a lane yet matches only 0.12% of the time, and from transport, a reduction spread so widely that nearly every partial sum rides a ring to its accumulator.</p>
+                        <p>Since the sparsity pattern is known offline, I proposed a dataflow that binds the schedule ahead of time using longest-processing-time list scheduling, fixing which nonzero fills which lane each cycle, and folds each cluster’s 32-cell ring into a 4×8 grid. Binding removes the comparator array, as lanes now follow a fixed order rather than a search, and folding removes the ring and half the buffer ports, as partial sums now walk an 8-cell chain. In a cycle-accurate simulator on SuiteSparse matrices, the design is 3.08× faster than HiT on every sparse-sparse workload and 1.37× faster across the rest, on a 17.9% smaller chip drawing 19.4% less power in the sparse regime.</p>
                     </div>
                 </div>
 
@@ -337,13 +322,8 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <ul>
-                            <li>Characterized 15 workloads across cryptography, signal processing, bioinformatics and machine learning on the state-of-the-art pLUTo architecture, and observed that LUT loading and row sweeping consume 95% of execution time.</li>
-                            <li>Traced the overhead to two design limits, a subarray holding only one LUT while 11 of 15 workloads require over 20 LUTs, and a full row sweep on every query even though more than half of all LUT entries go unused in 9 of 15 workloads.</li>
-                            <li>Proposed an architecture addressing both with Packing, which keeps multiple LUTs co-resident in a subarray to avoid reloads on function switches, and Masking, which skips row activations for LUT indices absent from the current input.</li>
-                            <li>Estimated area, latency, and energy by extending the pLUTo simulator, synthesizing the mask-generation logic in Yosys, and modelling the broadcast network in CACTI 7 at 22nm, with circuit-level functionality verified in ngspice.</li>
-                            <li>Demonstrated a 4.3× speedup, 7.4× energy reduction, and 46.5× EDP improvement over pLUTo at 14.2% area overhead, alongside 86.7× and 14.3× speedups over an Intel Core i9-14900 CPU and an NVIDIA RTX 4070 GPU.</li>
-                        </ul>
+                        <p>Characterizing 15 workloads across cryptography, signal processing, bioinformatics, and machine learning on the state-of-the-art pLUTo architecture, we observed that LUT loading and row sweeping consume 95% of execution time. This traces to two design limits: a subarray holds only one LUT while 11 of 15 workloads need more than 20, and every query sweeps the full row even though more than half of all LUT entries go unused in 9 of 15 workloads.</p>
+                        <p>We proposed an architecture that addresses both through Packing, which keeps multiple LUTs co-resident in a subarray to avoid reloads on function switches, and Masking, which skips row activations for LUT indices absent from the current input. We evaluated it by extending the pLUTo simulator, synthesizing the mask-generation logic in Yosys, modelling the broadcast network in CACTI 7 at 22nm, and verifying circuit-level functionality in ngspice. It delivers a 4.3× speedup, 7.4× energy reduction, and 46.5× EDP improvement over pLUTo at 14.2% area overhead, along with 86.7× and 14.3× speedups over an Intel Core i9-14900 CPU and an NVIDIA RTX 4070 GPU.</p>
                     </div>
                 </div>
 
@@ -363,29 +343,12 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <h6 class="mt-3">1. Virtual-Real Cache Hierarchy</h6>
-                        <ul>
-                            <li>Studied the TLB energy of VIPT L1 caches, which translate on every access and draw up to 13% of core power, and found VIVT caches remove those lookups only to move the cost onto the L2 critical path as synonym handling.</li>
-                            <li>Proposed a two-level hierarchy with a VIVT L1 backed by CBIT, a location table built from the L2 tag array.</li>
-                            <li>Resolved each L1 miss by indexing CBIT with the translated physical address, whose valid and level bits flag the block as a synonym in L1, resident in L2, or absent, and whose way field gives a tag-free read from either cache.</li>
-                            <li>Modelled the proposal in ChampSim and simulated it on 49 SPEC CPU2006 and CPU2017 traces as well as multi-threaded CloudSuite workloads in a quad-core setup, with energy and area derived from CACTI 6.5 at 32nm.</li>
-                            <li>Improved performance by 8% over a VIPT baseline and 15% over prior-art VC-DSR, while cutting dynamic cache energy by up to 64% and replacing the 0.57mm² L2 tag array with a 0.21mm² CBIT.</li>
-                        </ul>
-                        <h6 class="mt-3">2. Data-Aware Prefetching for Graph Workloads</h6>
-                        <ul>
-                            <li>Profiled the GAP kernels by data type and observed low-reuse structure blocks evicting higher-utility property data hierarchy-wide, limiting the L2 to a 16% average hit rate, low enough that removing it improved performance.</li>
-                            <li>Traced this to pointer chasing through the CSR offset, structure, and property arrays, whose data-dependent load-load chains stride prefetchers cannot follow and recent prefetchers like Berti and Pythia cannot learn.</li>
-                            <li>Proposed RAGE, which isolates structure data in a structure cache replacing the L2 and reserves L1 and LLC for property data, generating dependent property prefetches at the memory controller from structure prefetch returns.</li>
-                            <li>Modelled RAGE on Sniper and simulated a 4-core system across five GAP kernels and eight graphs exceeding LLC capacity, with access latencies derived in CACTI and chip area in McPAT at 45nm.</li>
-                            <li>Achieved a 24% average speedup over no prefetching, outperforming recent general-purpose prefetchers and leading the closest hardware graph prefetchers DROPLET and SDC+LP by 5% and 7%, at 0.03% chip area overhead.</li>
-                        </ul>
-                        <h6 class="mt-3">3. Lightweight Cache Replacement</h6>
-                        <ul>
-                            <li>Studied the cost of LRU, whose recency state scales with associativity, and of LLC-based policies such as SHiP and Hawkeye, which add large predictor tables, leaving no low-overhead policy usable at all cache levels.</li>
-                            <li>Proposed LiC, which reframes the problem from deciding which block to evict to deciding which block to protect, retaining the most recently accessed block of a set with a single log<sub>2</sub> n-bit pointer per set in an n-way cache.</li>
-                            <li>Modelled LiC on ChampSim and simulated it on 49 SPEC CPU2006 and CPU2017 single-core traces as well as multi-threaded CloudSuite workloads in a quad-core setup, with its storage and power estimated in CACTI at 45nm.</li>
-                            <li>Matched LRU’s performance to within 0.001% while shrinking the replacement-policy storage of a 2MB 16-way LLC by 16×, 14×, and 28× against LRU, SHiP, and Hawkeye, and by 4× against low-cost policies NRU and PLRU.</li>
-                        </ul>
+                        <h5 class="mt-4 mb-2 fw-bold">1. Virtual-Real Cache Hierarchy</h5>
+                        <p>VIPT L1 caches translate on every access, and their TLB lookups draw up to 13% of core power; VIVT caches remove those lookups but move the cost onto the L2 critical path as synonym handling. We proposed a two-level hierarchy with a VIVT L1 backed by CBIT, a location table built from the L2 tag array. On an L1 miss, CBIT is indexed with the translated physical address: its valid and level bits indicate whether the block is a synonym in L1, resident in L2, or absent, and its way field enables a tag-free read from either cache. Modelled in ChampSim on 49 SPEC CPU2006 and CPU2017 traces and multi-threaded CloudSuite workloads on a quad-core system, with energy and area from CACTI 6.5 at 32nm, the design improves performance by 8% over a VIPT baseline and 15% over prior-art VC-DSR, cuts dynamic cache energy by up to 64%, and replaces the 0.57mm² L2 tag array with a 0.21mm² CBIT.</p>
+                        <h5 class="mt-4 mb-2 fw-bold">2. Data-Aware Prefetching for Graph Workloads</h5>
+                        <p>Profiling the GAP kernels by data type, we observed low-reuse structure blocks evicting higher-utility property data throughout the hierarchy, limiting the L2 to a 16% average hit rate, so low that removing the L2 improved performance. The root cause is pointer chasing through the CSR offset, structure, and property arrays, whose data-dependent load-load chains stride prefetchers cannot follow and recent prefetchers like Berti and Pythia cannot learn. We proposed RAGE, which isolates structure data in a structure cache that replaces the L2, reserves L1 and LLC for property data, and generates dependent property prefetches at the memory controller from structure prefetch returns. Simulated in Sniper on a 4-core system across five GAP kernels and eight graphs exceeding LLC capacity, with latencies from CACTI and area from McPAT at 45nm, RAGE achieves a 24% average speedup over no prefetching, outperforms recent general-purpose prefetchers, and leads the closest hardware graph prefetchers, DROPLET and SDC+LP, by 5% and 7% at 0.03% chip area overhead.</p>
+                        <h5 class="mt-4 mb-2 fw-bold">3. Lightweight Cache Replacement</h5>
+                        <p>LRU’s recency state grows with associativity, and LLC-oriented policies such as SHiP and Hawkeye add large predictor tables, leaving no low-overhead policy usable at every cache level. We proposed LiC, which reframes replacement from deciding which block to evict to deciding which block to protect, retaining the most recently accessed block of each set with a single log<sub>2</sub>n-bit pointer per set in an n-way cache. Modelled in ChampSim on 49 SPEC CPU2006 and CPU2017 single-core traces and multi-threaded CloudSuite workloads on a quad-core system, with storage and power from CACTI at 45nm, LiC matches LRU’s performance to within 0.001% while shrinking the replacement-policy storage of a 2MB 16-way LLC by 16×, 14×, and 28× relative to LRU, SHiP, and Hawkeye, and by 4× relative to the low-cost policies NRU and PLRU.</p>
                     </div>
                 </div>
 
@@ -405,12 +368,7 @@
                     <div class="research-details">
                         <hr>
                         <h5>Research Details</h5>
-                        <ul>
-                            <li>Conducted a literature review on 3D DRAM technologies, including High Bandwidth Memory and Hybrid Memory Cube to understand their architecture, core functionalities, and potential for high-bandwidth applications.</li>
-                            <li>Performed an in-depth analysis of SILO, which discusses the use of a private die-stacked DRAM cache similar to HMC.</li>
-                            <li>Developed a 64 MB HMC tag array for an HBM cache using the ChampSim simulator, enabling set associativity in HBM.</li>
-                            <li>Achieved an 8.5% improvement over the directly mapped HBM cache and a 24.27% speedup compared to the baseline.</li>
-                        </ul>
+                        <p>I studied 3D DRAM technologies, including High Bandwidth Memory and the Hybrid Memory Cube, and analyzed SILO, which uses a private die-stacked DRAM cache similar to HMC. Building on this, I implemented a 64 MB HMC tag array for an HBM cache in ChampSim to enable set associativity in HBM, achieving an 8.5% improvement over a direct-mapped HBM cache and a 24.27% speedup over the baseline.</p>
                     </div>
                 </div>
             </div>
@@ -418,127 +376,19 @@
         <hr class="m-0" />
 
         
-        <!-- Projects -->
-
-        <section class="resume-section" id="projects">
-            <div class="resume-section-content">
-                <h2 class="mb-4">Projects</h2>
-                
-                <a href="javascript:void(0);" id="back-to-projects" class="btn btn-link mb-4" style="display: none;">&larr; Back to All Projects</a>
-        
-                <div class="project-item mb-4">
-                    <div class="project-header">
-                        <div class="d-flex flex-column flex-md-row justify-content-between">
-                            <div class="flex-grow-1">
-                                <h3 class="mb-1 project-title"><a>Pipelined RISC Processor</a></h3>
-                                <h4 class="mb-1 fst-italic fs-5 fw-normal">EE 309: Microprocessors | Prof. Virendra Singh</h4>
-                                <p class="mb-0 project-summary"> Designed and implemented a 16-bit 6-stage pipelined processor supporting predicated execution, multiple load/store operations, branch prediction, and hazard mitigation, programmed in VHDL.</p>
-                            </div>
-                            <div class="flex-shrink-0" style="width: 165px;">
-                                <span class="text-primary">Mar 2024 - May 2024</span><br />
-                                <span class="text-primary">IIT Bombay</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <hr>
-                        <h5>Project Details</h5>
-                        <ul>
-                            <li>Designed IITB-RISC, a 16-bit 6-stage pipelined processor supporting predicated execution, multiple load/store operations, and branch prediction.</li>
-                            <li>Implemented hazard mitigation with stalling, flushing, data forwarding, and a history-bit-based branch predictor, which reduced stalls and improved the overall IPC.</li>
-                            <li>Programmed the complete datapath using a mix of behavioral and structural VHDL.</li>
-                            <li>Tested the system rigorously with an extensive custom instruction set in ModelSim to ensure correctness.</li>
-                        </ul>
-                    </div>
-                </div>
-        
-                <div class="project-item mb-4">
-                    <div class="project-header">
-                        <div class="d-flex flex-column flex-md-row justify-content-between">
-                            <div class="flex-grow-1">
-                                <h3 class="mb-1 project-title"><a>Multicycle Architecture Processor</a></h3>
-                                <h4 class="mb-1 fst-italic fs-5 fw-normal">EE 224: Digital Systems | Prof. Virendra Singh</h4>
-                                <p class="mb-0 project-summary">Designed and implemented a 16-bit processor supporting R/I/J instruction types and a 14-instruction Turing-complete ISA, programmed in VHDL and tested on ALTERA MAX-10 FPGA.</p>
-                            </div>
-                            <div class="flex-shrink-0" style="width: 165px;">
-                                <span class="text-primary">Nov 2023 - Jan 2024</span><br />
-                                <span class="text-primary">IIT Bombay</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <hr>
-                        <h5>Project Details</h5>
-                        <ul>
-                            <li>Modeled IITB-CPU, a 16-bit processor with 8 registers, supporting R/I/J instructions and a 14-instruction Turing-complete ISA.</li>
-                            <li>Programmed core components including ALU, Register File, Memory Unit, and controller, using structural VHDL for optimized testing on Xen-10 FPGA.</li>
-                            <li>Created comprehensive digital documentation with FSMs, flowcharts, and component designs to validate all instructions and system functionalities.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item mb-4">
-                    <div class="project-header">
-                        <div class="d-flex flex-column flex-md-row justify-content-between">
-                            <div class="flex-grow-1">
-                                <h3 class="mb-1 project-title"><a>Logic Analyzer for PicoIRIS</a></h3>
-                                <h4 class="mb-1 fst-italic fs-5 fw-normal">Summer Project | Wadhwani Electronics Lab | Prof. Siddharth Tallur</h4>
-                                <p class="mb-0 project-summary">Integrated logic analyzer functionality into PicoIRIS for digital signal analysis, programmed PIC32 for Bluetooth UART communication with 500 kHz sampling, and built a Qt–Python GUI for real-time data visualization and UART debugging.</p>
-                            </div>
-                            <div class="flex-shrink-0" style="width: 165px;">
-                                <span class="text-primary">Jun 2024 - Jul 2024</span><br />
-                                <span class="text-primary">IIT Bombay</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <hr>
-                        <h5>Project Details</h5>
-                        <ul>
-                            <li>Upgraded the in-house PicoIRIS PCB by adding logic analyzer capabilities for academic digital signal analysis.</li>
-                            <li>Programmed PIC32 for Bluetooth UART communication, enabling data sampling up to 500 kHz for debugging UART, I2C, and SPI signals.</li>
-                            <li>Developed a Qt-based GUI integrated with Python backend for interactive data visualization and UART analysis.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item mb-4">
-                    <div class="project-header">
-                        <div class="d-flex flex-column flex-md-row justify-content-between">
-                            <div class="flex-grow-1">
-                                <h3 class="mb-1 project-title"><a>Colorization of B/W Images using DNN</a></h3>
-                                <h4 class="mb-1 fst-italic fs-5 fw-normal">WiDS 2023 | Analytics Club</h4>
-                                <p class="mb-0 project-summary">Implemented and iteratively refined deep learning models for automatic colorization of black-and-white images, leveraging Transfer Learning with Inception-ResNet-v2 to improve object recognition and color accuracy.</p>
-                            </div>
-                            <div class="flex-shrink-0" style="width: 165px;">
-                                <span class="text-primary">Dec 2023 - Jan 2024</span><br />
-                                <span class="text-primary">IIT Bombay</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <hr>
-                        <h5>Project Details</h5>
-                        <ul>
-                            <li>Preprocessed the MNIST dataset using Python libraries and trained a CNN with Batch Normalization in PyTorch for efficient digit classification.</li>
-                            <li>Evaluated and optimized model performance using accuracy metrics, precision, recall, F1-score, and confusion matrices.</li>
-                            <li>Implemented Alpha, Beta, and Final colorization models, integrating Inception-ResNet-v2 via Transfer Learning to enhance object understanding and coloring accuracy.</li>
-                        </ul>
-                    </div>
-                </div>
-        
-                </div>
-        </section>
 
         <!-- Teaching Experience-->
         <section class="resume-section" id="teaching">
             <div class="resume-section-content">
-                <h2 class="mb-5">Teaching &amp; Mentorship</h2>
+                <h2 class="mb-4">Teaching &amp; Service</h2>
+
+                <h2 style="font-size:2rem; color:#000; font-weight:bold;" class="mb-3 mt-4">Teaching</h2>
 
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
-                        <h3 class="mb-2">Institute Student Mentor</h3>
-                        <div class="subheading mb-2">Student Mentorship Program</div>
+                        <h3 class="mb-1">Probability and Random Processes (EE 325)</h3>
+                        <h4 class="mb-1 fst-italic fs-5 fw-normal">Prof. Nikhil Karamchandani</h4>
+                        <div class="subheading mb-2">Teaching Assistant</div>
                     </div>
                     <div class="flex-shrink-0" style="width: 165px;">
                         <span class="text-primary">Aug 2026 - Present</span><br>
@@ -548,19 +398,9 @@
 
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
-                        <h3 class="mb-2">Probability and Random Processes (EE 325)</h3>
-                        <div class="subheading mb-2">Teaching Assistant (130+ students)</div>
-                    </div>
-                    <div class="flex-shrink-0" style="width: 165px;">
-                        <span class="text-primary">Aug 2026 - Present</span><br>
-                        <span class="text-primary">IIT Bombay</span>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-2">Processor Design (EE 739)</h3>
-                        <div class="subheading mb-2">Teaching Assistant (170+ students)</div>
+                        <h3 class="mb-1">Processor Design (EE 739)</h3>
+                        <h4 class="mb-1 fst-italic fs-5 fw-normal">Prof. Virendra Singh</h4>
+                        <div class="subheading mb-2">Teaching Assistant</div>
                     </div>
                     <div class="flex-shrink-0" style="width: 165px;">
                         <span class="text-primary">Jan 2026 - Apr 2026</span><br>
@@ -570,12 +410,35 @@
 
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
-                        <h3 class="mb-2">Digital Systems (EE 224)</h3>
-                        <div class="subheading mb-2">Teaching Assistant (95+ students)</div>
+                        <h3 class="mb-1">Digital Systems (EE 224)</h3>
+                        <h4 class="mb-1 fst-italic fs-5 fw-normal">Prof. Virendra Singh</h4>
+                        <div class="subheading mb-2">Teaching Assistant</div>
                     </div>
                     <div class="flex-shrink-0" style="width: 165px;">
                         <span class="text-primary">Aug 2024 - Nov 2024</span><br>
                         <span class="text-primary">IIT Bombay</span>
+                    </div>
+                </div>
+
+                <h2 style="font-size:2rem; color:#000; font-weight:bold;" class="mb-3 mt-4">Academic Service</h2>
+
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-1">Artifact Evaluation Committee</h3>
+                        <h4 class="mb-1 fst-italic fs-5 fw-normal">MICRO 2026</h4>
+                    </div>
+                    <div class="flex-shrink-0" style="width: 165px;">
+                        <span class="text-primary">2026</span>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-1">Artifact Evaluation Committee</h3>
+                        <h4 class="mb-1 fst-italic fs-5 fw-normal">PACT 2026</h4>
+                    </div>
+                    <div class="flex-shrink-0" style="width: 165px;">
+                        <span class="text-primary">2026</span>
                     </div>
                 </div>
             </div>
@@ -747,56 +610,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const projectsContainer = document.querySelector('#projects .resume-section-content');
-        const projectItems = document.querySelectorAll('.project-item');
-        const backButton = document.getElementById('back-to-projects');
 
-        // Add a click listener to each project's header
-        projectItems.forEach(item => {
-            const header = item.querySelector('.project-header');
-            header.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                // Don't allow clicking another project while one is open
-                if (projectsContainer.classList.contains('viewing-project')) {
-                    return;
-                }
-                
-                // Add classes to the container and the clicked item to trigger CSS animations
-                projectsContainer.classList.add('viewing-project');
-                item.classList.add('expanded');
-
-                // Show the back button
-                backButton.style.display = 'inline-block';
-
-                // Smoothly scroll to the top of the projects section for a better view
-                document.getElementById('projects').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-
-        // Add click listener for the 'Back' button
-        backButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Find the currently expanded project
-            const expandedItem = document.querySelector('.project-item.expanded');
-            
-            if (expandedItem) {
-                // Remove the classes to reverse the animation and hide the details
-                projectsContainer.classList.remove('viewing-project');
-                expandedItem.classList.remove('expanded');
-            }
-
-            // Hide the back button again
-            backButton.style.display = 'none';
-        });
-    });
-</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
